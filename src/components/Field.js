@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './Field.css';
+import './Field.css'
 
-export default function(props) {
+export default function({dark, size, position}) {
     return (
-        <div className={'field ' + (props.dark ? 'dark' : 'light')} style={{width: props.size, height: props.size}} />
+        <div className={'field ' + (dark ? 'dark' : 'light')} style={{width: size, height: size}} />
     );
 }

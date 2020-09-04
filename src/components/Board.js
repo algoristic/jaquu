@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
-import Grid from './Grid.js'
-import Field from './Field.js'
+import VisualGrid from './VisualGrid'
+import TaskGrid from './TaskGrid'
+import Field from './Field'
+import tasks from '../assets/dev_tasks'
 
 class Board extends Component {
     constructor(props) {
@@ -12,7 +14,7 @@ class Board extends Component {
         };
         this.windowSize = this.windowSize.bind(this);
         this.calcBoardDimensions = this.calcBoardDimensions.bind(this);
-        this.isFieldDark = this.isFieldDark.bind(this);
+        this.getFieldProperties = this.getFieldProperties.bind(this);
 
         window.addEventListener('resize', this.windowSize);
     }
@@ -37,12 +39,12 @@ class Board extends Component {
         };
     }
 
-    isFieldDark(index, dimensions) {
+    getFieldProperties(index, dimensions) {
         let dark;
         const cols = dimensions.columns;
         const rows = dimensions.rows;
+        const row = Math.floor(index / cols);
         if(cols % 2 === 0) {
-            let row = Math.floor(index / cols);
             if(row % 2 === 0) {
                 dark = (index % 2 === 0);
             } else {
@@ -51,7 +53,10 @@ class Board extends Component {
         } else {
             dark = (index % 2 === 0);
         }
-        return dark;
+        return {
+            y: row,
+            dark: dark
+        };
     }
 
     render() {
@@ -59,19 +64,26 @@ class Board extends Component {
         console.log(dimensions);
         let fields = [];
         for(let i = 0; i < (dimensions.columns * dimensions.rows); i++) {
-            const dark = this.isFieldDark(i, dimensions);
-            fields[i] = (<Field i={i} key={'field_' + i} size="96px" dark={dark} />);
+            const fieldProperties = this.getFieldProperties(i, dimensions);
+            fields[i] = (
+                <Field key={i}
+                    size={96}
+                    position={{x: 0, y: 0}}
+                    dark={fieldProperties.dark}>
+                </Field>
+            );
         }
         return (
             <div className='board' style={{
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <Grid>
+                <TaskGrid columns={dimensions.columns - 1} rows={dimensions.rows - 1} />
+                <VisualGrid>
                 {
                     fields
                 }
-                </Grid>
+                </VisualGrid>
             </div>
         );
     }

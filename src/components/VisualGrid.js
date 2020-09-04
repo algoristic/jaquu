@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './Grid.css'
+import './VisualGrid.css'
 
 export default function(props) {
     return (
-        <div className='grid'>
+        <div className='visual-grid'>
         {
             props.children
         }
