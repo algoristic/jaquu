@@ -11,17 +11,17 @@ import './TaskGrid.css';
 
 export default function({columns, rows}) {
     return (
-        <div className='task-grid'>
+        <div className='task-grid' style={{width: columns * 96}}>
             <GridLayout className='layout'
                 cols={columns}
                 rowHeight={96}
                 width={columns * 96}
+                margin={[0, 0]}
                 preventollision={true}
-                autoSize={true}
                 verticalCompact={false}>
                 <div key='1'
                     className='task-widget'
-                    data-grid={{x: 4, y: 0, w: 1, h: 1, isResizable: false}}>
+                    data-grid={{x: 0, y: 0, w: 1, h: 1, isResizable: false}}>
                     <TaskName name="task_1" />
                 </div>
                 <div key='2'

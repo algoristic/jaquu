@@ -61,7 +61,6 @@ class Board extends Component {
 
     render() {
         const dimensions = this.calcBoardDimensions();
-        console.log(dimensions);
         let fields = [];
         for(let i = 0; i < (dimensions.columns * dimensions.rows); i++) {
             const fieldProperties = this.getFieldProperties(i, dimensions);

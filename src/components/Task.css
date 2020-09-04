@@ -6,4 +6,5 @@
     height: 96px;
     border-radius: 8px;
     cursor: move;
+    z-index: 9999;
 }
