@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+.board {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile {
+    width: 96px;
+    height: 96px;
+    background: white;
+}
+.black {
+    background: black;
+}

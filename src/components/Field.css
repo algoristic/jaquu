@@ -1,0 +1,9 @@
+.field {
+    border-radius: 10px;
+}
+.field.light {
+    background: rgba(255, 255, 255, 0);
+}
+.field.dark {
+    background: rgba(0, 0, 0, 0.1);
+}

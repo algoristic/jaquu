@@ -1,0 +1,5 @@
+.grid {
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+}
