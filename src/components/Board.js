@@ -41,7 +41,6 @@ class Board extends Component {
         let dark;
         const cols = dimensions.columns;
         const rows = dimensions.rows;
-        console.log(`cols=${cols}; rows=${rows}`);
         if(cols % 2 === 0) {
             let row = Math.floor(index / cols);
             if(row % 2 === 0) {
