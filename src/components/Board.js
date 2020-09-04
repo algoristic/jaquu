@@ -77,7 +77,7 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <TaskGrid columns={dimensions.columns - 1} rows={dimensions.rows - 1} />
+                <TaskGrid columns={dimensions.columns - 1} tasks={tasks} />
                 <VisualGrid>
                 {
                     fields
