@@ -3,6 +3,7 @@
     height: 100%;
 }
 .add-task-action .icon-positioner {
+    opacity: .1;
     text-align: center;
     margin-top: -25%;
     transform: translateY(50%);

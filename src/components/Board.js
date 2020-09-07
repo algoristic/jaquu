@@ -3,19 +3,21 @@ import React, { Component } from 'react'
 import VisualGrid from './VisualGrid'
 import TaskGrid from './TaskGrid'
 import Field from './Field'
-import tasks from '../assets/dev_tasks'
+import TaskService from '../service/taskService'
 
 class Board extends Component {
     constructor(props) {
         super(props);
+        this.taskService = new TaskService();
         this.state = {
             width: document.documentElement.clientWidth,
-            height: document.documentElement.clientHeight
+            height: document.documentElement.clientHeight,
+            tasks: this.taskService.getTasks()
         };
+
+        this.addTask = this.addTask.bind(this);
         this.windowSize = this.windowSize.bind(this);
         this.calcBoardDimensions = this.calcBoardDimensions.bind(this);
-        this.getFieldProperties = this.getFieldProperties.bind(this);
-
         window.addEventListener('resize', this.windowSize);
     }
 
@@ -39,36 +41,31 @@ class Board extends Component {
         };
     }
 
-    getFieldProperties(index, dimensions) {
-        let dark;
-        const cols = dimensions.columns;
-        const rows = dimensions.rows;
-        const row = Math.floor(index / cols);
-        if(cols % 2 === 0) {
-            if(row % 2 === 0) {
-                dark = (index % 2 === 0);
-            } else {
-                dark = (index % 2 === 1);
-            }
-        } else {
-            dark = (index % 2 === 0);
-        }
-        return {
-            y: row,
-            dark: dark
+    addTask({x, y}) {
+        const tasks = this.state.tasks;
+        const len = tasks.length;
+        const id = len;
+        const name = 'task_' + len;
+        const task = {
+            id: id,
+            name: name,
+            x: x,
+            y: y
         };
+        tasks.push(task);
+        this.setState({
+            tasks: tasks
+        });
     }
 
     render() {
         const dimensions = this.calcBoardDimensions();
         let fields = [];
         for(let i = 0; i < (dimensions.columns * dimensions.rows); i++) {
-            const fieldProperties = this.getFieldProperties(i, dimensions);
             fields[i] = (
-                <Field key={i}
-                    size={96}
-                    position={{x: 0, y: 0}}
-                    dark={fieldProperties.dark}>
+                <Field key={i} size={96}
+                    boardDimensions={dimensions}
+                    action={this.addTask} index={i}>
                 </Field>
             );
         }
@@ -77,7 +74,7 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <TaskGrid columns={dimensions.columns - 1} tasks={tasks} />
+                <TaskGrid columns={dimensions.columns - 1} tasks={this.state.tasks} />
                 <VisualGrid>
                 {
                     fields

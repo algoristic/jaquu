@@ -1,5 +1,7 @@
 .field {
     border-radius: 3px;
+}
+.field.accessible {
     cursor: pointer;
 }
 .field.light {
