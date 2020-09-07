@@ -1,0 +1,13 @@
+.add-task-action,
+.icon-positioner {
+    height: 100%;
+}
+.add-task-action .icon-positioner {
+    text-align: center;
+    margin-top: -25%;
+    transform: translateY(50%);
+    display: none;
+}
+body:not(.react-draggable-transparent-selection) .add-task-action:hover .icon-positioner {
+    display: block;
+}

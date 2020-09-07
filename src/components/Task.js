@@ -2,16 +2,21 @@ import React from 'react'
 
 import TaskName from './TaskName'
 
-import './Task.css'
-
-export default function(props) {
-    let x = 0;
-    let y = 0;
+function renderTaskWidget({id, name, x, y}) {
     return (
-        <div key='a'
+        <div key={id}
             className='task-widget'
             data-grid={{x: x, y: y, w: 1, h: 1, isResizable: false}}>
-            <TaskName name="task_1" />
+            <TaskName name={name} />
         </div>
     );
+}
+
+function renderTaskWidgets(tasks) {
+    return tasks.map(task => renderTaskWidget(task));
+}
+
+export {
+    renderTaskWidget,
+    renderTaskWidgets
 }

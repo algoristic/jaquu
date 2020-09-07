@@ -3,7 +3,7 @@ export default [
         id: 'xb234b',
         name: 'task_1',
         x: 4,
-        y: 0
+        y: 1
     },
     {
         id: 'lk234n',

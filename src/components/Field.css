@@ -1,5 +1,6 @@
 .field {
     border-radius: 3px;
+    cursor: pointer;
 }
 .field.light {
     background: rgba(255, 255, 255, 0);

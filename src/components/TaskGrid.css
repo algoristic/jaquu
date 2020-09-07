@@ -5,6 +5,12 @@
     left: 0;
     right: 0;
 }
+.task-grid {
+    pointer-events: none;
+}
+.react-grid-item {
+    pointer-events: all;
+}
 .react-grid-item.react-grid-placeholder {
     border-radius: 4px;
     background: rgba(0, 0, 0, 0);
