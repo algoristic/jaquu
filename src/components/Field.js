@@ -34,7 +34,7 @@ export default function({index, boardDimensions, size, action}) {
         {
             accessible && (
                 <AddTaskAction onClick={() => action({x: x, y: y})}>
-                    <Icon icon='plus' size='3x' />
+                    <Icon name='plus' size='3x' />
                 </AddTaskAction>
             )
         }

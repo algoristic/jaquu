@@ -2,11 +2,11 @@ import React from 'react'
 
 import TaskName from './TaskName'
 
-function renderTaskWidget({id, name, x, y}) {
+function renderTaskWidget({id, name, position}) {
     return (
-        <div key={id}
-            className='task-widget'
-            data-grid={{x: x, y: y, w: 1, h: 1, isResizable: false}}>
+        <div key={id} className='task-widget'
+            size={{width: 96, height: 96}}
+            data-grid={{x: position.x, y: position.y, w: 1, h: 1, isResizable: false}}>
             <TaskName name={name} />
         </div>
     );

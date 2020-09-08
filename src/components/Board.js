@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import VisualGrid from './VisualGrid'
 import TaskGrid from './TaskGrid'
 import Field from './Field'
+import NewTaskWizard from './NewTaskWizard'
 import TaskService from '../service/taskService'
 
 class Board extends Component {
@@ -12,11 +13,13 @@ class Board extends Component {
         this.state = {
             width: document.documentElement.clientWidth,
             height: document.documentElement.clientHeight,
+            createNew: false,
             tasks: this.taskService.getTasks()
         };
 
         this.addTask = this.addTask.bind(this);
         this.windowSize = this.windowSize.bind(this);
+        this.cancelAddTask = this.cancelAddTask.bind(this);
         this.calcBoardDimensions = this.calcBoardDimensions.bind(this);
         window.addEventListener('resize', this.windowSize);
     }
@@ -42,19 +45,18 @@ class Board extends Component {
     }
 
     addTask({x, y}) {
-        const tasks = this.state.tasks;
-        const len = tasks.length;
-        const id = len;
-        const name = 'task_' + len;
-        const task = {
-            id: id,
-            name: name,
-            x: x,
-            y: y
-        };
-        tasks.push(task);
         this.setState({
-            tasks: tasks
+            addNew: true,
+            newPosition: {
+                x: x,
+                y: y
+            }
+        });
+    }
+
+    cancelAddTask() {
+        this.setState({
+            addNew: false
         });
     }
 
@@ -74,12 +76,12 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
+                <NewTaskWizard active={this.state.addNew}
+                    position={this.state.newPosition}
+                    cancel={this.cancelAddTask}>
+                </NewTaskWizard>
                 <TaskGrid columns={dimensions.columns - 1} tasks={this.state.tasks} />
-                <VisualGrid>
-                {
-                    fields
-                }
-                </VisualGrid>
+                <VisualGrid fields={fields} />
             </div>
         );
     }

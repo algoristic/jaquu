@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Wecker",
+        "position": {
+            "x": 4,
+            "y": 1
+        },
+        "type": "alarm",
+        "alarm": {
+            "due": 123134235234132
+        }
+    },
+    {
+        "id": 2,
+        "name": "Stoppuhr",
+        "position": {
+            "x": 7,
+            "y": 2
+        },
+        "type": "stopwatch",
+        "stopwatch": {
+            "start": 123134235234132
+        }
+    },
+    {
+        "id": 3,
+        "name": "Zeitgeber",
+        "position": {
+            "x": 2,
+            "y": 5
+        },
+        "type": "timer",
+        "timer": {
+            "due": 123134235234132
+        }
+    }
+]

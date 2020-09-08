@@ -1,0 +1,4 @@
+.new-task-wizard ~ .visual-grid,
+.new-task-wizard ~ .task-grid {
+    filter: blur(4px);
+}

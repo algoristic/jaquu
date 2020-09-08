@@ -17,7 +17,7 @@ export default function({columns, tasks}) {
             <GridLayout cols={columns} width={columns * 96}
                 rowHeight={96} margin={[0, 0]}
                 preventollision={true}
-                verticalCompact={false}
+                compactType={null}
                 onDrop={() => {
                     alert('LOL');
                 }}>

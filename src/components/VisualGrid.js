@@ -2,11 +2,11 @@ import React from 'react'
 
 import './VisualGrid.css'
 
-export default function(props) {
+export default function({fields}) {
     return (
         <div className='visual-grid'>
         {
-            props.children
+            fields
         }
         </div>
     );

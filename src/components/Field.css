@@ -1,6 +1,9 @@
 .field {
     border-radius: 3px;
 }
+.field:not(.accessible) {
+    cursor: not-allowed;
+}
 .field.accessible {
     cursor: pointer;
 }

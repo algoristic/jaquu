@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,7 +14,8 @@
     "react-dom": "^16.13.1",
     "react-grid-layout": "^1.1.0",
     "react-gridstack": "^0.1.4",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
