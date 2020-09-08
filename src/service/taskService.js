@@ -1,5 +1,3 @@
-import dev_tasks from '../assets/dev_tasks'
-
 export default class TaskService {
     getTasks = () => {
         let tasks = window.localStorage.getItem('tasks');

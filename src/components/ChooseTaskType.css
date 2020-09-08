@@ -14,13 +14,13 @@
     justify-content: center;
 }
 .choose-task-type .choice-wrapper {
-    animation-name: swiftTypes;
+    animation-name: swift-open;
     animation-duration: 500ms;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
-@keyframes swiftTypes {
+@keyframes swift-open {
     from {
         opacity: 0;
         margin-left: -48px;
