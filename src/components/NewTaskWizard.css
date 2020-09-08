@@ -1,3 +1,7 @@
+.visual-grid,
+.task-grid {
+    transition: filter 200ms ease-in-out;
+}
 .new-task-wizard ~ .visual-grid,
 .new-task-wizard ~ .task-grid {
     filter: blur(4px);
