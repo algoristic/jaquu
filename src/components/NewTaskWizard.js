@@ -14,7 +14,6 @@ class NewTaskWizard extends Component {
     }
 
     setType(type) {
-        alert(`position={x=${this.props.position.x}|y=${this.props.position.y}}, type=${type}`);
         this.setState({
             step: 1,
             chosenType: type
