@@ -1,5 +1,5 @@
 .field {
-    border-radius: 3px;
+    border-radius: calc(var(--border-radius) / 2);
 }
 .field:not(.accessible) {
     cursor: not-allowed;

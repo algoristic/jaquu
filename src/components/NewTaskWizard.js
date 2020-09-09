@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import ChooseTaskType from './ChooseTaskType'
-import NewTaskDialogue from './NewTaskDialogue'
+import TaskDialogue from './TaskDialogue'
 import './NewTaskWizard.css'
 
 class NewTaskWizard extends Component {
@@ -12,6 +12,7 @@ class NewTaskWizard extends Component {
         }
 
         this.setType = this.setType.bind(this);
+        this.cancelWizard = this.cancelWizard.bind(this);
     }
 
     setType(type) {
@@ -21,6 +22,14 @@ class NewTaskWizard extends Component {
         });
     }
 
+    cancelWizard() {
+        this.setState({
+            step: 0,
+            chosenType: null
+        })
+        this.props.cancel();
+    }
+
     render() {
         let elem = null;
         switch(this.state.step) {
@@ -28,7 +37,7 @@ class NewTaskWizard extends Component {
                 elem = <ChooseTaskType callback={this.setType} cancel={this.props.cancel} />;
                 break;
             case 1:
-                elem = <NewTaskDialogue type={this.state.chosenType} position={this.props.position} />
+                elem = <TaskDialogue type={this.state.chosenType} position={this.props.position} cancel={this.cancelWizard} />
                 break;
             default:
                 elem = (<></>);
