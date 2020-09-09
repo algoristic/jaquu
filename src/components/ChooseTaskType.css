@@ -1,8 +1,7 @@
 .choose-task-type {
     display: flex;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    inset: 0px;
     z-index: 10;
     align-items: center;
     justify-content: center;

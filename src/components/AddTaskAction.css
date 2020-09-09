@@ -4,11 +4,12 @@
 }
 .add-task-action .icon-positioner {
     opacity: .1;
-    text-align: center;
-    margin-top: -25%;
-    transform: translateY(50%);
+    font-size: 16px;
     display: none;
+    justify-content: center;
+    align-items: center;
+
 }
 body:not(.react-draggable-transparent-selection) .add-task-action:hover .icon-positioner {
-    display: block;
+    display: flex;
 }

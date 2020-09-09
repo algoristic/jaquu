@@ -1,0 +1,5 @@
+.clickable-overlay {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+}

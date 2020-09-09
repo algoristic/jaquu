@@ -10,6 +10,7 @@
     background: rgba(255, 255, 255, 0.75);
     color: rgba(0, 0, 0, 0.33);
     transition: transform 100ms ease-in-out;
+    z-index: 100;
 }
 .choice-wrapper:hover {
     color: rgb(102, 179, 255);
