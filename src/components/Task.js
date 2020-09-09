@@ -11,7 +11,7 @@ function renderTaskWidget(task) {
             size={{width: 96, height: 96}}
             data-grid={{x: position.x, y: position.y, w: 1, h: 1, isResizable: false}}>
             <TaskName name={name} />
-            <TaskIcon type={type} />
+            <TaskIcon type={type} size={'3x'} />
             <TaskTimer task={task} />
         </div>
     );

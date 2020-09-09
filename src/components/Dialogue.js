@@ -8,25 +8,25 @@ class Dialoue extends Component {
         super(props);
     }
 
-    static Header({children}) {
+    static Header({children, className}) {
         return (
-            <div className='dialogue-header'>
+            <div className={'dialogue-header' + (className ? (' ' + className ): '')}>
                 { children }
             </div>
         );
     }
 
-    static Main({children}) {
+    static Main({children, className}) {
         return (
-            <div className='dialogue-main'>
+            <div className={'dialogue-main' + (className ? (' ' + className ): '')}>
                 { children }
             </div>
         );
     }
 
-    static Footer({children}) {
+    static Footer({children, className}) {
         return (
-            <div className='dialogue-footer'>
+            <div className={'dialogue-footer' + (className ? (' ' + className ): '')}>
                 { children }
             </div>
         );

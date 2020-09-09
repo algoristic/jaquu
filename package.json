@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-grid-layout": "^1.1.0",
+    "react-grid-system": "^7.0.3",
     "react-gridstack": "^0.1.4",
     "react-scripts": "3.4.3",
     "webfontloader": "^1.6.28"

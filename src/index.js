@@ -5,6 +5,7 @@ import WebFont from 'webfontloader'
 import icons from './assets/icons';
 import App from './components/App'
 import './index.css'
+import './util.css'
 
 WebFont.load({
     google: {
