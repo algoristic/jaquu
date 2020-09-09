@@ -8,7 +8,7 @@ import './index.css'
 
 WebFont.load({
     google: {
-        families: ['Quicksand:400,700', 'sans-serif']
+        families: ['Quicksand:500,700', 'sans-serif']
     }
 });
 ReactDOM.render(<App/>, document.querySelector('#root'));

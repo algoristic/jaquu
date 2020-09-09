@@ -8,7 +8,7 @@ export default function({type}) {
     return (
         <div className='task-icon-wrapper'>
             <span className='task-icon'>
-                <Icon name={types[type].icon} size={'2x'} />
+                <Icon name={types[type].icon} size={'3x'} />
             </span>
         </div>
     );
