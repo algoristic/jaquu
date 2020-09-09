@@ -6,7 +6,7 @@ import './TaskTimer.css'
 class TaskTimer extends Component {
     constructor(props) {
         super(props);
-        this.state = {time: '-'};
+        this.state = {time: '. . .'};
     }
     render() {
         const { task } = this.props;

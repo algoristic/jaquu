@@ -1,26 +1,31 @@
+import { getDifferenceToNow, displayRemainingTime, displayRunningTime } from '../util/timeUtils'
+
 export default {
     alarm: {
         icon: 'bell',
         name: 'Wecker',
         timerFunction: ({due}, callback) => {
-            let now = new Date().getTime();
-            callback(due - now);
+            due = getDifferenceToNow(due);
+            due = displayRemainingTime(due);
+            callback(due);
         }
     },
     stopwatch: {
         icon: 'hourglass-half',
         name: 'Stoppuhr',
         timerFunction: ({start}, callback) => {
-            let now = new Date().getTime();
-            callback(now - start);
+            let diff = getDifferenceToNow(start);
+            diff = displayRunningTime(diff);
+            callback(diff);
         }
     },
     timer: {
         icon: 'clock',
         name: 'Zeitgeber',
         timerFunction: ({due}, callback) => {
-            let now = new Date().getTime();
-            callback(due - now);
+            due = getDifferenceToNow(due);
+            due = displayRemainingTime(due);
+            callback(due);
         }
     },
     tracker: {
