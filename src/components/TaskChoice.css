@@ -11,6 +11,7 @@
     color: rgba(0, 0, 0, 0.5);
     transition: transform 100ms ease-in-out;
     z-index: 100;
+    pointer-events: all;
 }
 .choice-wrapper:hover {
     color: rgb(102, 179, 255);

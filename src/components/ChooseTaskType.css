@@ -2,9 +2,10 @@
     display: flex;
     position: fixed;
     inset: 0px;
-    z-index: 10;
+    z-index: 20;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
 }
 .choose-task-type .content-wrapper {
     display: flex;

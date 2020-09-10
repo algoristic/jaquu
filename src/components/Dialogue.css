@@ -4,11 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 20;
+    pointer-events: none;
 }
 .dialogue .dialogue-body {
     width: 50vw;
     z-index: 100;
+    pointer-events: all;
     border-radius: var(--border-radius);
     box-shadow: var(--material-shadow-wide);
 }

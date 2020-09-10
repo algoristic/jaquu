@@ -43,11 +43,10 @@ class NewTaskWizard extends Component {
             default:
                 elem = (<></>);
         }
-        let lol = <ClickableOverlay action={this.cancelWizard} />;
         return (
             <div className='new-task-wizard'>
                 { this.props.active && elem }
-
+                { this.props.active && <ClickableOverlay action={this.cancelWizard} /> }
             </div>
         );
     }
