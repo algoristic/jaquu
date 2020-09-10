@@ -9,7 +9,8 @@ class NewTaskWizard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            step: 0
+            step: 1,
+            fade: false
         }
 
         this.setType = this.setType.bind(this);
@@ -18,35 +19,43 @@ class NewTaskWizard extends Component {
 
     setType(type) {
         this.setState({
-            step: 1,
+            step: 2,
             chosenType: type
         });
     }
 
     cancelWizard() {
         this.setState({
-            step: 0,
-            chosenType: null
-        })
-        this.props.cancel();
+            fade: true
+        });
+        setTimeout(() => {
+            this.setState({
+                step: 1,
+                chosenType: null,
+                fade: false
+            });
+            this.props.cancel();
+        }, 500);
     }
 
     render() {
         let elem = null;
         switch(this.state.step) {
-            case 0:
-                elem = <ChooseTaskType callback={this.setType} cancel={this.props.cancel} />;
-                break;
             case 1:
-                elem = <TaskDialogue type={this.state.chosenType} position={this.props.position} cancel={this.cancelWizard} />
+                elem = (<ChooseTaskType callback={this.setType} cancel={this.cancelWizard} />);
+                break;
+            case 2:
+                elem = (<TaskDialogue type={this.state.chosenType} position={this.props.position} cancel={this.cancelWizard} />);
                 break;
             default:
                 elem = (<></>);
         }
+        const { active } = this.props;
+        const { fade } = this.state;
         return (
-            <div className='new-task-wizard'>
-                { this.props.active && elem }
-                { this.props.active && <ClickableOverlay action={this.cancelWizard} /> }
+            <div className={'new-task-wizard' + (fade ? ' fade-out' : '')}>
+                { active && elem }
+                { active && <ClickableOverlay action={this.cancelWizard} /> }
             </div>
         );
     }
