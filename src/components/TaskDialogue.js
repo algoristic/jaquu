@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-grid-system';
 
 import Dialogue from './Dialogue'
+import Input from './Input'
 import TaskIcon from './TaskIcon'
 import types from '../assets/types'
 import './TaskDialogue.css'
@@ -25,7 +26,7 @@ class TaskDialogue extends Component {
                     <Container>
                         <Row>
                             <Col sm={8}>
-                                <input type="text" value={task.name} onChange={e => editProperty('name', e.target.value)} />
+                                <Input value={task.name} onChange={e => editProperty('name', e.target.value)} />
                                 <p>{'<Zeiteinstellungen />'}</p>
                                 <p>{'<?Farbe />'}</p>
                             </Col>

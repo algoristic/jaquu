@@ -7,6 +7,7 @@ import App from './components/App'
 import './index.css'
 import './util.css'
 
+
 WebFont.load({
     google: {
         families: ['Quicksand:500,700', 'sans-serif']
