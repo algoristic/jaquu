@@ -33,18 +33,12 @@ class Dialoue extends Component {
     }
 
     render() {
-        const { children, modal, modalAction } = this.props;
-        const { width } = this.props;
+        const { children, width } = this.props;
         return (
             <div className='dialogue'>
                 <div className='dialogue-body'>
                     { children }
                 </div>
-                {
-                    modal && (
-                        <ClickableOverlay action={modalAction} />
-                    )
-                }
             </div>
         );
     }

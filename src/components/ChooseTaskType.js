@@ -13,7 +13,6 @@ export default function({callback, cancel}) {
                 <TaskChoice type='stopwatch' callback={callback} />
                 <TaskChoice type='timer' callback={callback} />
                 <TaskChoice type='tracker' callback={callback} />
-                <ClickableOverlay action={cancel} />
             </div>
         </div>
     );
