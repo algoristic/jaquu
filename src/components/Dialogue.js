@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import ClickableOverlay from './ClickableOverlay'
 import './Dialogue.css'
 
 class Dialoue extends Component {

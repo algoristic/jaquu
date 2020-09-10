@@ -43,17 +43,9 @@ class NewTaskWizard extends Component {
                 elem = (<></>);
         }
         return (
-            <>
-            {
-                this.props.active && (
-                    <div className='new-task-wizard'>
-                    {
-                        elem
-                    }
-                    </div>
-                )
-            }
-            </>
+            <div className='new-task-wizard'>
+                { this.props.active && elem }
+            </div>
         );
     }
 }
