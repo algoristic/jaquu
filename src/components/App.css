@@ -1,4 +1,8 @@
 body {
     margin: 0;
     overflow: hidden;
+    --primary: #2196F3;
+    --primary-light: #a6d5fa;
+    --grey: #495957;
+    --grey-light: #ced4da;
 }

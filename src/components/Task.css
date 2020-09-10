@@ -10,5 +10,5 @@
     flex-direction: column;
 }
 .task-widget .task-icon {
-    color: rgba(0, 0, 0, 0.75);
+    color: var(--grey);
 }

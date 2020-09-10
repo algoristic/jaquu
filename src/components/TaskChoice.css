@@ -8,13 +8,13 @@
     width: 96px;
     height: 96px;
     background: rgba(255, 255, 255, 0.75);
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--grey);
     transition: transform 100ms ease-in-out;
     z-index: 100;
     pointer-events: all;
 }
 .choice-wrapper:hover {
-    color: #2196F3;
+    color: var(--primary);
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -22,7 +22,7 @@
     font-weight: 700;
 }
 .choice-wrapper .type-wrapper {
-    color: rgba(255, 255, 255, 0.75);
+    color: white;
     position: absolute;
     margin-bottom: 128px;
 }

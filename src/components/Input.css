@@ -1,16 +1,16 @@
 .input {
     width: 100%;
-    border :1px solid #ced4da;
+    border :1px solid var(--grey-light);
     border-radius: calc(var(--border-radius) / 2);
     padding: 0.25rem;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .input:hover {
-    border-color: #2196F3;
+    border-color: var(--primary);
 }
 .input:focus {
     outline: 0 none;
     outline-offset: 0;
-    box-shadow: 0 0 0 0.2rem #a6d5fa;
-    border-color: #2196F3;
+    box-shadow: 0 0 0 0.2rem var(--primary-light);
+    border-color: var(--primary);
 }
