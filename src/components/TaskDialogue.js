@@ -11,19 +11,21 @@ class TaskDialogue extends Component {
         super(props);
     }
     render() {
-        const { type, position, cancel } = this.props;
+        const { task, cancel, editProperty } = this.props;
+        const { type } = task;
+        const editType = types[type];
         return (
             <Dialogue modal={true} modalAction={cancel}>
                 <Dialogue.Header>
                     <h2>
-                        {types[type].name}
+                        {editType.name}
                     </h2>
                 </Dialogue.Header>
                 <Dialogue.Main>
                     <Container>
                         <Row>
                             <Col sm={8}>
-                                <p>{'<Name />'}</p>
+                                <input type="text" value={task.name} onChange={e => editProperty('name', e.target.value)} />
                                 <p>{'<Zeiteinstellungen />'}</p>
                                 <p>{'<?Farbe />'}</p>
                             </Col>

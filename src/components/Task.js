@@ -3,6 +3,16 @@ import React from 'react'
 import TaskIcon from './TaskIcon'
 import TaskName from './TaskName'
 import TaskTimer from './TaskTimer'
+import types from '../assets/types'
+
+function createNewTask({ type, position }) {
+    return {
+        id: null,
+        name: '',
+        position: position,
+        type: type
+    }
+}
 
 function renderTaskWidget(task) {
     const { id, name, position, type } = task;
@@ -23,5 +33,6 @@ function renderTaskWidgets(tasks) {
 
 export {
     renderTaskWidget,
-    renderTaskWidgets
+    renderTaskWidgets,
+    createNewTask
 }

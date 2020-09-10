@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import ChooseTaskType from './ChooseTaskType'
 import ClickableOverlay from './ClickableOverlay'
 import TaskDialogue from './TaskDialogue'
+import { createNewTask } from './Task'
+import { setPropertyValue } from '../util/objectUtils'
 import './NewTaskWizard.css'
 
 class NewTaskWizard extends Component {
@@ -10,18 +12,29 @@ class NewTaskWizard extends Component {
         super(props);
         this.state = {
             step: 1,
-            fade: false
+            fade: false,
         }
 
         this.setType = this.setType.bind(this);
         this.cancelWizard = this.cancelWizard.bind(this);
+        this.editTaskProperty = this.editTaskProperty.bind(this);
     }
 
     setType(type) {
         this.setState({
             step: 2,
-            chosenType: type
+            chosenType: type,
+            task: createNewTask({
+                type: type,
+                position: this.props.position
+            })
         });
+    }
+
+    editTaskProperty(property, value) {
+        let { task } = this.state;
+        task = setPropertyValue(task, property, value);
+        this.setState({task: task});
     }
 
     cancelWizard() {
@@ -32,7 +45,8 @@ class NewTaskWizard extends Component {
             this.setState({
                 step: 1,
                 chosenType: null,
-                fade: false
+                fade: false,
+                task: null
             });
             this.props.cancel();
         }, 500);
@@ -45,7 +59,7 @@ class NewTaskWizard extends Component {
                 elem = (<ChooseTaskType callback={this.setType} cancel={this.cancelWizard} />);
                 break;
             case 2:
-                elem = (<TaskDialogue type={this.state.chosenType} position={this.props.position} cancel={this.cancelWizard} />);
+                elem = (<TaskDialogue task={this.state.task} cancel={this.cancelWizard} editProperty={this.editTaskProperty} />);
                 break;
             default:
                 elem = (<></>);
