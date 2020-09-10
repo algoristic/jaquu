@@ -14,7 +14,7 @@
     pointer-events: all;
 }
 .choice-wrapper:hover {
-    color: rgb(102, 179, 255);
+    color: #2196F3;
     cursor: pointer;
     transform: scale(1.1);
 }
