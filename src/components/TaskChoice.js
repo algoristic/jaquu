@@ -1,7 +1,7 @@
 import React from 'react'
 
-import types from '../assets/types'
 import Icon from './Icon'
+import types from '../assets/types'
 import './TaskChoice.css'
 
 export default function({type, callback}) {

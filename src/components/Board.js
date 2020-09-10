@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import VisualGrid from './VisualGrid'
-import TaskGrid from './TaskGrid'
 import Field from './Field'
 import NewTaskWizard from './NewTaskWizard'
+import TaskGrid from './TaskGrid'
 import TaskService from '../service/taskService'
+import VisualGrid from './VisualGrid'
 
 class Board extends Component {
     constructor(props) {

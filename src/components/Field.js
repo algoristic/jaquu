@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Icon from './Icon'
 import AddTaskAction from './AddTaskAction'
+import Icon from './Icon'
 import './Field.css'
 
 function calculateProperties(index, dimensions) {

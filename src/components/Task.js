@@ -1,7 +1,7 @@
 import React from 'react'
 
-import TaskName from './TaskName'
 import TaskIcon from './TaskIcon'
+import TaskName from './TaskName'
 import TaskTimer from './TaskTimer'
 
 function renderTaskWidget(task) {

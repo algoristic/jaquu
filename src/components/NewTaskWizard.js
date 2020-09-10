@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import ChooseTaskType from './ChooseTaskType'
+import ClickableOverlay from './ClickableOverlay'
 import TaskDialogue from './TaskDialogue'
 import './NewTaskWizard.css'
 
@@ -42,9 +43,11 @@ class NewTaskWizard extends Component {
             default:
                 elem = (<></>);
         }
+        let lol = <ClickableOverlay action={this.cancelWizard} />;
         return (
             <div className='new-task-wizard'>
                 { this.props.active && elem }
+
             </div>
         );
     }

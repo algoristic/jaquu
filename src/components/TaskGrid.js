@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import GridLayout from 'react-grid-layout';
 
-import { renderTaskWidgets } from './Task'
 import TaskName from './TaskName'
-
-
+import { renderTaskWidgets } from './Task'
 import '../../node_modules/react-grid-layout/css/styles.css'
 import '../../node_modules/react-resizable/css/styles.css'
 import './Task.css'
