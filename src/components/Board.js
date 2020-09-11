@@ -18,7 +18,7 @@ class Board extends Component {
         };
 
         this.addTask = this.addTask.bind(this);
-        this.updateTask = this.updateTask.bind(this);
+        this.saveTask = this.saveTask.bind(this);
         this.windowSize = this.windowSize.bind(this);
         this.cancelAddTask = this.cancelAddTask.bind(this);
         this.calcBoardDimensions = this.calcBoardDimensions.bind(this);
@@ -55,15 +55,20 @@ class Board extends Component {
         });
     }
 
-    updateTask(toBeUpdated) {
+    saveTask(toBeUpdated) {
         let { tasks } = this.state;
-        tasks = tasks.map(task => {
-            if(task.id === toBeUpdated.id) {
-                return toBeUpdated;
-            } else {
-                return task;
-            }
-        });
+        if(toBeUpdated.id === null) {
+            toBeUpdated.id = tasks.length;
+            tasks.push(toBeUpdated);
+        } else {
+            tasks = tasks.map(task => {
+                if(task.id === toBeUpdated.id) {
+                    return toBeUpdated;
+                } else {
+                    return task;
+                }
+            });
+        }
         this.setState({tasks: tasks});
         this.taskService.saveTasks(tasks);
     }
@@ -92,11 +97,12 @@ class Board extends Component {
             }}>
                 <NewTaskWizard active={this.state.addNew}
                     position={this.state.newPosition}
-                    cancel={this.cancelAddTask}>
+                    cancel={this.cancelAddTask}
+                    save={this.saveTask}>
                 </NewTaskWizard>
                 <TaskGrid tasks={this.state.tasks}
                     columns={dimensions.columns - 1}
-                    updateTask={this.updateTask}>
+                    updateTask={this.saveTask}>
                 </TaskGrid>
                 <VisualGrid fields={fields} />
             </div>

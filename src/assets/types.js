@@ -25,7 +25,7 @@ export default {
             if(!stopped) {
                 time += getDifferenceToNow(lastStop);
             }
-            time = displayRemainingTime(time);
+            time = displayRunningTime(time);
             callback(time);
         },
         editor: StopwatchDialogue

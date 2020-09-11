@@ -53,19 +53,23 @@ class NewTaskWizard extends Component {
     }
 
     render() {
+        const { active, save } = this.props;
+        const { step, fade, task } = this.state;
         let elem = null;
-        switch(this.state.step) {
+        switch(step) {
             case 1:
                 elem = (<ChooseTaskType callback={this.setType} />);
                 break;
             case 2:
-                elem = (<EditTaskDialogue task={this.state.task} editProperty={this.editTaskProperty} />);
+                elem = (
+                    <EditTaskDialogue save={save} task={task}
+                        editProperty={this.editTaskProperty}>
+                    </EditTaskDialogue>
+                );
                 break;
             default:
                 elem = (<></>);
         }
-        const { active } = this.props;
-        const { fade } = this.state;
         return (
             <div className={'new-task-wizard' + (fade ? ' fade-out' : '')}>
                 { active && elem }

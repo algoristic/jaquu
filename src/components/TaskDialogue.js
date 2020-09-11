@@ -16,7 +16,7 @@ class TaskDialogue extends Component {
         super(props);
     }
     render() {
-        const { task, additionalButtons, editProperty, children } = this.props;
+        const { task, additionalButtons, editProperty, save, children } = this.props;
         const { type } = task;
         const editType = types[type];
         return (
@@ -30,7 +30,7 @@ class TaskDialogue extends Component {
                     <Container>
                         <Row>
                             <Col sm={8}>
-                                <label for='task-name'>Name</label>
+                                <label htmlFor='task-name'>Name</label>
                                 <Input id='task-name' value={task.name} onChange={e => editProperty('name', e.target.value)} />
                                 { children }
                             </Col>
@@ -41,7 +41,7 @@ class TaskDialogue extends Component {
                     </Container>
                 </Dialogue.Main>
                 <Dialogue.Footer className='text-right'>
-                    <Button icon='check' text='Speichern' />
+                    <Button onClick={() => save(task)} icon='check' text='Speichern' />
                     { additionalButtons }
                 </Dialogue.Footer>
             </Dialogue>
