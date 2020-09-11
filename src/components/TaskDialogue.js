@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-grid-system';
+import { setConfiguration } from 'react-grid-system';
 
+import Button from './Button'
 import Dialogue from './Dialogue'
 import Input from './Input'
 import TaskIcon from './TaskIcon'
 import types from '../assets/types'
 import './TaskDialogue.css'
 
+setConfiguration({ gutterWidth: 0 });
+
 class TaskDialogue extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        const { task, cancel, editProperty } = this.props;
+        const { task, additionalButtons, editProperty, children } = this.props;
         const { type } = task;
         const editType = types[type];
         return (
-            <Dialogue modal={true} modalAction={cancel}>
+            <Dialogue>
                 <Dialogue.Header>
                     <h2>
                         {editType.name}
@@ -26,9 +30,9 @@ class TaskDialogue extends Component {
                     <Container>
                         <Row>
                             <Col sm={8}>
-                                <Input value={task.name} onChange={e => editProperty('name', e.target.value)} />
-                                <p>{'<Zeiteinstellungen />'}</p>
-                                <p>{'<?Farbe />'}</p>
+                                <label for='task-name'>Name</label>
+                                <Input id='task-name' value={task.name} onChange={e => editProperty('name', e.target.value)} />
+                                { children }
                             </Col>
                             <Col sm={4}>
                                 <TaskIcon type={type} size={'4x'} />
@@ -36,8 +40,9 @@ class TaskDialogue extends Component {
                         </Row>
                     </Container>
                 </Dialogue.Main>
-                <Dialogue.Footer>
-                    <div className='text-right'>{'<SaveButton />'}</div>
+                <Dialogue.Footer className='text-right'>
+                    <Button icon='check' text='Speichern' />
+                    { additionalButtons }
                 </Dialogue.Footer>
             </Dialogue>
         )

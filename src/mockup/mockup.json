@@ -17,7 +17,11 @@
             "y": 2
         },
         "type": "stopwatch",
-        "start": 1599570249433
+        "stopwatch": {
+            "stopped": true,
+            "measuredTime": 0,
+            "lastStop": null
+        }
     },
     {
         "id": 3,

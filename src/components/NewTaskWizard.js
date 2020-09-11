@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import ChooseTaskType from './ChooseTaskType'
 import ClickableOverlay from './ClickableOverlay'
-import TaskDialogue from './TaskDialogue'
+import EditTaskDialogue from './EditTaskDialogue'
 import { createNewTask } from './Task'
 import { setPropertyValue } from '../util/objectUtils'
 import './NewTaskWizard.css'
@@ -56,10 +56,10 @@ class NewTaskWizard extends Component {
         let elem = null;
         switch(this.state.step) {
             case 1:
-                elem = (<ChooseTaskType callback={this.setType} cancel={this.cancelWizard} />);
+                elem = (<ChooseTaskType callback={this.setType} />);
                 break;
             case 2:
-                elem = (<TaskDialogue task={this.state.task} cancel={this.cancelWizard} editProperty={this.editTaskProperty} />);
+                elem = (<EditTaskDialogue task={this.state.task} editProperty={this.editTaskProperty} />);
                 break;
             default:
                 elem = (<></>);

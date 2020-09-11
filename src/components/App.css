@@ -3,6 +3,7 @@ body {
     overflow: hidden;
     --primary: #2196F3;
     --primary-light: #a6d5fa;
+    --primary-dark: #0d89ec;
     --grey: #495957;
     --grey-light: #ced4da;
 }

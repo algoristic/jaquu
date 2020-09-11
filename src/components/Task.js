@@ -3,15 +3,47 @@ import React from 'react'
 import TaskIcon from './TaskIcon'
 import TaskName from './TaskName'
 import TaskTimer from './TaskTimer'
+import TaskService from '../service/taskService'
 import types from '../assets/types'
 
+function getDefaultTaskName(type) {
+    const service = new TaskService();
+    const tasks = service.getTasks();
+    let num = 1;
+    tasks.forEach(task => {
+        if(task.type === type) {
+            num++;
+        }
+    })
+    const taskType = types[type];
+    const defaultName = `${taskType.name} #${num}`;
+    return defaultName;
+}
+
 function createNewTask({ type, position }) {
-    return {
+    let task =  {
         id: null,
-        name: '',
+        name: getDefaultTaskName(type),
         position: position,
         type: type
+    };
+    task = decorate(task);
+    return task;
+}
+
+function decorate(task) {
+    switch(task.type) {
+        case 'stopwatch':
+            task.stopwatch = {
+                stopped: true,
+                measuredTime: 0,
+                lastStop: 0
+            }
+            break;
+        default:
+            break;
     }
+    return task;
 }
 
 function renderTaskWidget(task) {
