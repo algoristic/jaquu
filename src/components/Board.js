@@ -47,7 +47,7 @@ class Board extends Component {
 
     addTask({x, y}) {
         this.setState({
-            addNew: true,
+            edit: true,
             newPosition: {
                 x: x,
                 y: y
@@ -55,27 +55,29 @@ class Board extends Component {
         });
     }
 
-    saveTask(toBeUpdated) {
+    saveTask(toBeSaved) {
         let { tasks } = this.state;
-        if(toBeUpdated.id === null) {
-            toBeUpdated.id = tasks.length;
-            tasks.push(toBeUpdated);
+        if(toBeSaved.id === null) {
+            toBeSaved.id = tasks.length;
+            tasks.push(toBeSaved);
         } else {
             tasks = tasks.map(task => {
-                if(task.id === toBeUpdated.id) {
-                    return toBeUpdated;
+                if(task.id === toBeSaved.id) {
+                    return toBeSaved;
                 } else {
                     return task;
                 }
             });
         }
-        this.setState({tasks: tasks});
+        this.setState({
+            tasks: tasks
+        });
         this.taskService.saveTasks(tasks);
     }
 
     cancelAddTask() {
         this.setState({
-            addNew: false
+            edit: false
         });
     }
 
@@ -95,7 +97,7 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <NewTaskWizard active={this.state.addNew}
+                <NewTaskWizard active={this.state.edit}
                     position={this.state.newPosition}
                     cancel={this.cancelAddTask}
                     save={this.saveTask}>

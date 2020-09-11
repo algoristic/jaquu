@@ -16,7 +16,8 @@ class NewTaskWizard extends Component {
         }
 
         this.setType = this.setType.bind(this);
-        this.cancelWizard = this.cancelWizard.bind(this);
+        this.saveTask = this.saveTask.bind(this);
+        this.closeWizard = this.closeWizard.bind(this);
         this.editTaskProperty = this.editTaskProperty.bind(this);
     }
 
@@ -37,7 +38,13 @@ class NewTaskWizard extends Component {
         this.setState({task: task});
     }
 
-    cancelWizard() {
+    saveTask(task) {
+        const { save } = this.props;
+        save(task)
+        this.closeWizard();
+    }
+
+    closeWizard() {
         this.setState({
             fade: true
         });
@@ -58,22 +65,26 @@ class NewTaskWizard extends Component {
         let elem = null;
         switch(step) {
             case 1:
-                elem = (<ChooseTaskType callback={this.setType} />);
+                elem = (
+                    <ChooseTaskType callback={this.setType} />
+                );
                 break;
             case 2:
                 elem = (
-                    <EditTaskDialogue save={save} task={task}
+                    <EditTaskDialogue save={this.saveTask} task={task}
                         editProperty={this.editTaskProperty}>
                     </EditTaskDialogue>
                 );
                 break;
             default:
-                elem = (<></>);
+                elem = (
+                    <></>
+                );
         }
         return (
             <div className={'new-task-wizard' + (fade ? ' fade-out' : '')}>
                 { active && elem }
-                { active && <ClickableOverlay action={this.cancelWizard} /> }
+                { active && <ClickableOverlay action={this.closeWizard} /> }
             </div>
         );
     }
