@@ -1,0 +1,11 @@
+.task-actions {
+    display: none;
+    position: absolute;
+    right: -8px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.task-widget:hover .task-actions {
+    display: flex;
+}

@@ -20,14 +20,14 @@ export default {
             {
                 id: 'stop-stopwatch',
                 icon: 'pause',
-                visible: true,
-                disabled: false
+                visible: (task) => true,
+                disabled: (task) => false
             },
             {
                 id: 'start-stopwatch',
                 icon: 'play',
-                visible: true,
-                disabled: false
+                visible: (task) => true,
+                disabled: (task) => false
             }
         ]
     },

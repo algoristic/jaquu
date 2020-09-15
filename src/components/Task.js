@@ -1,5 +1,6 @@
 import React from 'react'
 
+import TaskActions from './TaskActions'
 import TaskIcon from './TaskIcon'
 import TaskName from './TaskName'
 import TaskTimer from './TaskTimer'
@@ -55,6 +56,7 @@ function renderTaskWidget(task) {
             <TaskName name={name} />
             <TaskIcon type={type} size={'3x'} />
             <TaskTimer task={task} />
+            <TaskActions task={task} />
         </div>
     );
 }

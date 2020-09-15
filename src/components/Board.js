@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import ActionContext from '../context/ActionContext'
 import Field from './Field'
 import NewTaskWizard from './NewTaskWizard'
 import TaskGrid from './TaskGrid'
@@ -97,16 +98,18 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <NewTaskWizard active={this.state.edit}
-                    position={this.state.newPosition}
-                    cancel={this.cancelAddTask}
-                    save={this.saveTask}>
-                </NewTaskWizard>
-                <TaskGrid tasks={this.state.tasks}
-                    columns={dimensions.columns - 1}
-                    updateTask={this.saveTask}>
-                </TaskGrid>
-                <VisualGrid fields={fields} />
+                <ActionContext.Provider value={this.saveTask}>
+                    <NewTaskWizard active={this.state.edit}
+                        position={this.state.newPosition}
+                        cancel={this.cancelAddTask}
+                        save={this.saveTask}>
+                    </NewTaskWizard>
+                    <TaskGrid tasks={this.state.tasks}
+                        columns={dimensions.columns - 1}
+                        updateTask={this.saveTask}>
+                    </TaskGrid>
+                    <VisualGrid fields={fields} />
+                </ActionContext.Provider>
             </div>
         );
     }
