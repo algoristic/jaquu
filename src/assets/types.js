@@ -19,6 +19,14 @@ export default {
         editor: StopwatchDialogue,
         actions: [
             {
+                id: 'edit-stopwatch',
+                icon: 'pencil-alt',
+                title: 'Bearbeiten',
+                visible: () => true,
+                disabled: () => false,
+                fn: () => {}
+            },
+            {
                 id: 'stop-stopwatch',
                 icon: 'pause',
                 title: 'Anhalten',
@@ -44,6 +52,22 @@ export default {
                     task.stopwatch.lastStop = new Date().getTime();
                     save(task);
                 }
+            },
+            {
+                id: 'restart-stopwatch',
+                icon: 'history',
+                title: 'Neu starten',
+                visible: () => true,
+                disabled: () => false,
+                fn: () => {}
+            },
+            {
+                id: 'delete-stopwatch',
+                icon: 'times',
+                title: 'Löschen',
+                visible: () => true,
+                disabled: () => false,
+                fn: () => {}
             }
         ]
     },
