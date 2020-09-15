@@ -4,7 +4,7 @@ function doCallback(callback, fn) {
     callback(fn());
 }
 
-function alarmFunction({ due }, callback) {
+function alarmTimer({ due }, callback) {
     doCallback(callback, () => {
         due = getDifferenceToNow(due);
         due = displayRemainingTime(due);
@@ -12,7 +12,7 @@ function alarmFunction({ due }, callback) {
     })
 }
 
-function stopwatchFunction({ stopwatch }, callback) {
+function stopwatchTimer({ stopwatch }, callback) {
     doCallback(callback, () => {
         const { stopped, measuredTime, lastStop } = stopwatch;
         let time = measuredTime;
@@ -24,7 +24,7 @@ function stopwatchFunction({ stopwatch }, callback) {
     });
 }
 
-function timerFunction({ due }, callback) {
+function timerTimer({ due }, callback) {
     doCallback(callback, () => {
         due = getDifferenceToNow(due);
         due = displayRemainingTime(due);
@@ -32,11 +32,11 @@ function timerFunction({ due }, callback) {
     })
 }
 
-function trackerFunction({}, callback) {}
+function trackerTimer({}, callback) {}
 
 export {
-    alarmFunction,
-    stopwatchFunction,
-    timerFunction,
-    trackerFunction
+    alarmTimer,
+    stopwatchTimer,
+    timerTimer,
+    trackerTimer
 }

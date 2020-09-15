@@ -2,19 +2,19 @@ import AlarmDialogue from '../components/dialogue/AlarmDialogue'
 import StopwatchDialogue from '../components/dialogue/StopwatchDialogue'
 import TimerDialogue from '../components/dialogue/TimerDialogue'
 import TrackerDialogue from '../components/dialogue/TrackerDialogue'
-import {  alarmFunction, stopwatchFunction, timerFunction, trackerFunction } from '../util/typeUtils'
+import {  alarmTimer, stopwatchTimer, timerTimer, trackerTimer } from '../util/typeUtils'
 
 export default {
     alarm: {
         icon: 'bell',
         name: 'Wecker',
-        timerFunction: alarmFunction,
+        timerFunction: alarmTimer,
         editor: AlarmDialogue
     },
     stopwatch: {
         icon: 'hourglass-half',
         name: 'Stoppuhr',
-        timerFunction: stopwatchFunction,
+        timerFunction: stopwatchTimer,
         editor: StopwatchDialogue,
         actions: [
             {
@@ -34,13 +34,13 @@ export default {
     timer: {
         icon: 'clock',
         name: 'Zeitgeber',
-        timerFunction: timerFunction,
+        timerFunction: timerTimer,
         editor: TimerDialogue
     },
     tracker: {
         icon: 'tasks',
         name: 'Zeiterfassung',
-        timerFunction: trackerFunction,
+        timerFunction: trackerTimer,
         editor: TrackerDialogue
     }
 };
