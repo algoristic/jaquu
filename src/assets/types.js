@@ -1,49 +1,46 @@
-import { getDifferenceToNow, displayRemainingTime, displayRunningTime } from '../util/timeUtils'
-
 import AlarmDialogue from '../components/dialogue/AlarmDialogue'
 import StopwatchDialogue from '../components/dialogue/StopwatchDialogue'
 import TimerDialogue from '../components/dialogue/TimerDialogue'
 import TrackerDialogue from '../components/dialogue/TrackerDialogue'
+import {  alarmFunction, stopwatchFunction, timerFunction, trackerFunction } from '../util/typeUtils'
 
 export default {
     alarm: {
         icon: 'bell',
         name: 'Wecker',
-        timerFunction: ({due}, callback) => {
-            due = getDifferenceToNow(due);
-            due = displayRemainingTime(due);
-            callback(due);
-        },
+        timerFunction: alarmFunction,
         editor: AlarmDialogue
     },
     stopwatch: {
         icon: 'hourglass-half',
         name: 'Stoppuhr',
-        timerFunction: ({ stopwatch }, callback) => {
-            const { stopped, measuredTime, lastStop } = stopwatch;
-            let time = measuredTime;
-            if(!stopped) {
-                time += getDifferenceToNow(lastStop);
+        timerFunction: stopwatchFunction,
+        editor: StopwatchDialogue,
+        actions: [
+            {
+                id: 'stop-stopwatch',
+                icon: 'pause',
+                visible: true,
+                disabled: false
+            },
+            {
+                id: 'start-stopwatch',
+                icon: 'play',
+                visible: true,
+                disabled: false
             }
-            time = displayRunningTime(time);
-            callback(time);
-        },
-        editor: StopwatchDialogue
+        ]
     },
     timer: {
         icon: 'clock',
         name: 'Zeitgeber',
-        timerFunction: ({due}, callback) => {
-            due = getDifferenceToNow(due);
-            due = displayRemainingTime(due);
-            callback(due);
-        },
+        timerFunction: timerFunction,
         editor: TimerDialogue
     },
     tracker: {
         icon: 'tasks',
         name: 'Zeiterfassung',
-        timerFunction: (task, callback) => {},
+        timerFunction: trackerFunction,
         editor: TrackerDialogue
     }
 };
