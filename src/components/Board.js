@@ -98,7 +98,7 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <ActionContext.Provider value={this.saveTask}>
+                <ActionContext.Provider value={{save: this.saveTask}}>
                     <NewTaskWizard active={this.state.edit}
                         position={this.state.newPosition}
                         cancel={this.cancelAddTask}

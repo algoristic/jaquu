@@ -1,10 +1,16 @@
-function getDifferenceToNow(date) {
-    if(!(typeof date === 'Date')) {
-        date = new Date(date);
+function getTimeDifference(d1, d2) {
+    if(!(typeof d1 === 'Date')) {
+        d1 = new Date(d1);
     }
-    const now = new Date();
-    const difference = (now - date);
+    if(!(typeof d2 === 'Date')) {
+        d2 = new Date(d2);
+    }
+    const difference = (d1 - d2);
     return difference;
+}
+
+function getDifferenceToNow(date) {
+    return getTimeDifference(new Date(), date);
 }
 
 function displayRemainingTime(time) {
@@ -52,6 +58,7 @@ function displayTimeVariable(msec) {
 }
 
 export {
+    getTimeDifference,
     getDifferenceToNow,
     displayRemainingTime,
     displayRunningTime

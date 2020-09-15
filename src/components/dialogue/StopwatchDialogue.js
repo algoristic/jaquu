@@ -13,7 +13,7 @@ class StopwatchDialogue extends Component {
     saveAndStart() {
         const { save, task } = this.props;
         task.stopwatch.stopped = false;
-        task.stopwatch.lastStop = new Date();
+        task.stopwatch.lastStop = new Date().getTime();
         save(task);
     }
 
