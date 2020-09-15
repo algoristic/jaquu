@@ -20,14 +20,16 @@ export default {
             {
                 id: 'stop-stopwatch',
                 icon: 'pause',
-                visible: (task) => true,
+                title: 'Anhalten',
+                visible: ({ stopwatch }) => !stopwatch.stopped,
                 disabled: (task) => false
             },
             {
                 id: 'start-stopwatch',
                 icon: 'play',
-                visible: (task) => true,
-                disabled: (task) => false
+                title: 'Starten',
+                visible: ({ stopwatch }) => stopwatch.stopped,
+                disabled: (task) => true
             }
         ]
     },
