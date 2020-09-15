@@ -50,7 +50,7 @@ function displayTimeVariable(msec) {
         mmPresent = true;
     }
     const ss = Math.floor(msec / 1000);
-    if((ss !== 0) || mmPresent) {
+    {
         msec -= ss * 1000;
         result += `${ss}s`;
     }

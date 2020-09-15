@@ -3,6 +3,7 @@ import StopwatchDialogue from '../components/dialogue/StopwatchDialogue'
 import TimerDialogue from '../components/dialogue/TimerDialogue'
 import TrackerDialogue from '../components/dialogue/TrackerDialogue'
 import { alarmTimer, stopwatchTimer, timerTimer, trackerTimer } from '../util/typeUtils'
+import actions from './typeActions'
 import { getDifferenceToNow } from '../util/timeUtils'
 
 export default {
@@ -18,57 +19,11 @@ export default {
         timerFunction: stopwatchTimer,
         editor: StopwatchDialogue,
         actions: [
-            {
-                id: 'edit-stopwatch',
-                icon: 'pencil-alt',
-                title: 'Bearbeiten',
-                visible: () => true,
-                disabled: () => false,
-                fn: () => {}
-            },
-            {
-                id: 'stop-stopwatch',
-                icon: 'pause',
-                title: 'Anhalten',
-                visible: ({ stopwatch }) => !stopwatch.stopped,
-                disabled: (task) => false,
-                fn: (task, { save }) => {
-                    const { measuredTime, lastStop } = task.stopwatch;
-                    task.stopwatch = {
-                        stopped: true,
-                        measuredTime: (measuredTime + getDifferenceToNow(lastStop))
-                    };
-                    save(task);
-                }
-            },
-            {
-                id: 'start-stopwatch',
-                icon: 'play',
-                title: 'Starten',
-                visible: ({ stopwatch }) => stopwatch.stopped,
-                disabled: (task) => true,
-                fn: (task, { save }) => {
-                    task.stopwatch.stopped = false;
-                    task.stopwatch.lastStop = new Date().getTime();
-                    save(task);
-                }
-            },
-            {
-                id: 'restart-stopwatch',
-                icon: 'history',
-                title: 'Neu starten',
-                visible: () => true,
-                disabled: () => false,
-                fn: () => {}
-            },
-            {
-                id: 'delete-stopwatch',
-                icon: 'times',
-                title: 'Löschen',
-                visible: () => true,
-                disabled: () => false,
-                fn: () => {}
-            }
+            actions.editStopwatch,
+            actions.startStopwatch,
+            actions.stopStopwatch,
+            actions.restartStopwatch,
+            actions.deleteStopwatch
         ]
     },
     timer: {
