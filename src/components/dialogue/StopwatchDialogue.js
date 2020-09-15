@@ -18,9 +18,11 @@ class StopwatchDialogue extends Component {
     }
 
     render() {
+        const { task, save } = this.props;
         return (
             <TaskDialogue {...this.props}
-                additionalButtons={[
+                buttons={[
+                    <Button onClick={() => save(task)} icon='check' text='Speichern' />,
                     <Button key='save-and-start' onClick={this.saveAndStart} icon='play' text='Speichern und los!' />
                 ]}>
             </TaskDialogue>

@@ -16,7 +16,7 @@ class TaskDialogue extends Component {
         super(props);
     }
     render() {
-        const { task, additionalButtons, editProperty, save, children } = this.props;
+        const { task, buttons, editProperty, save, children } = this.props;
         const { type } = task;
         const editType = types[type];
         return (
@@ -41,8 +41,7 @@ class TaskDialogue extends Component {
                     </Container>
                 </Dialogue.Main>
                 <Dialogue.Footer className='text-right'>
-                    <Button onClick={() => save(task)} icon='check' text='Speichern' />
-                    { additionalButtons }
+                    { buttons }
                 </Dialogue.Footer>
             </Dialogue>
         )
