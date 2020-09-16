@@ -1,0 +1,13 @@
+.task-editor-panel {
+    animation-name: fade-in;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    position: absolute;
+    z-index: 100;
+}
+
+.task-editor-panel.fade-out {
+    animation-name: fade-out;
+}

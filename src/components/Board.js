@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import ActionContext from '../context/ActionContext'
-import EditTaskDialogue from './EditTaskDialogue'
 import Field from './Field'
 import NewTaskWizard from './NewTaskWizard'
+import TaskEditorPanel from './TaskEditorPanel'
 import TaskGrid from './TaskGrid'
 import TaskService from '../service/taskService'
 import VisualGrid from './VisualGrid'
@@ -23,6 +23,7 @@ class Board extends Component {
         this.addTask = this.addTask.bind(this);
         this.saveTask = this.saveTask.bind(this);
         this.editTask = this.editTask.bind(this);
+        this.cancelEdit = this.cancelEdit.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
         this.windowSize = this.windowSize.bind(this);
         this.modifyTasks = this.modifyTasks.bind(this);
@@ -73,6 +74,10 @@ class Board extends Component {
 
     editTask(task) {
         this.setState({editTask: Object.assign({}, task)});
+    }
+
+    cancelEdit() {
+        this.setState({editTask: null});
     }
 
     editTaskProperty(property, value) {
@@ -146,7 +151,13 @@ class Board extends Component {
                         updateTask={this.saveTask}>
                     </TaskGrid>
                     <VisualGrid fields={fields} />
-                    { this.state.editTask && <EditTaskDialogue task={this.state.editTask} save={this.saveTask} editProperty={this.editTaskProperty} /> }
+                    { this.state.editTask && (
+                        <TaskEditorPanel task={this.state.editTask}
+                            save={this.saveTask}
+                            editProperty={this.editTaskProperty}
+                            action={this.cancelEdit}>
+                        </TaskEditorPanel>
+                    )}
                 </ActionContext.Provider>
             </div>
         );
