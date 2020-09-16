@@ -10,7 +10,11 @@ export default {
         icon: 'bell',
         name: 'Wecker',
         timerFunction: alarmTimer,
-        editor: AlarmDialogue
+        editor: AlarmDialogue,
+        actions: [
+            actions.editTask,
+            actions.deleteTask
+        ]
     },
     stopwatch: {
         icon: 'hourglass-half',
@@ -29,12 +33,20 @@ export default {
         icon: 'clock',
         name: 'Zeitgeber',
         timerFunction: timerTimer,
-        editor: TimerDialogue
+        editor: TimerDialogue,
+        actions: [
+            actions.editTask,
+            actions.deleteTask
+        ]
     },
     tracker: {
         icon: 'tasks',
         name: 'Zeiterfassung',
         timerFunction: trackerTimer,
-        editor: TrackerDialogue
+        editor: TrackerDialogue,
+        actions: [
+            actions.editTask,
+            actions.deleteTask
+        ]
     }
 };
