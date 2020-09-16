@@ -23,7 +23,7 @@ export default {
             actions.startStopwatch,
             actions.stopStopwatch,
             actions.restartStopwatch,
-            actions.deleteStopwatch
+            actions.deleteTask
         ]
     },
     timer: {

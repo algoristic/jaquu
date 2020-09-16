@@ -44,11 +44,13 @@ export default {
             save(task);
         }
     },
-    deleteStopwatch: {
+    deleteTask: {
         icon: 'times',
         title: 'Löschen',
         visible: () => true,
         disabled: () => false,
-        fn: () => {}
+        fn: (task, { remove }) => {
+            remove(task);
+        }
     }
 }

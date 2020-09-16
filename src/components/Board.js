@@ -19,7 +19,9 @@ class Board extends Component {
         };
 
         this.addTask = this.addTask.bind(this);
+        this.modifyTasks = this.modifyTasks.bind(this);
         this.saveTask = this.saveTask.bind(this);
+        this.deleteTask = this.deleteTask.bind(this);
         this.windowSize = this.windowSize.bind(this);
         this.cancelAddTask = this.cancelAddTask.bind(this);
         this.calcBoardDimensions = this.calcBoardDimensions.bind(this);
@@ -56,24 +58,40 @@ class Board extends Component {
         });
     }
 
-    saveTask(toBeSaved) {
+    modifyTasks(fn) {
         let { tasks } = this.state;
-        if(toBeSaved.id === null) {
-            toBeSaved.id = tasks.length;
-            tasks.push(toBeSaved);
-        } else {
-            tasks = tasks.map(task => {
-                if(task.id === toBeSaved.id) {
-                    return toBeSaved;
-                } else {
-                    return task;
-                }
-            });
-        }
+        tasks = fn(tasks);
         this.setState({
             tasks: tasks
         });
         this.taskService.saveTasks(tasks);
+    }
+
+    saveTask(toBeSaved) {
+        this.modifyTasks(tasks => {
+            if(toBeSaved.id === null) {
+                toBeSaved.id = tasks.length;
+                tasks.push(toBeSaved);
+            } else {
+                tasks = tasks.map(task => {
+                    if(task.id === toBeSaved.id) {
+                        return toBeSaved;
+                    } else {
+                        return task;
+                    }
+                });
+            }
+            return tasks;
+        });
+    }
+
+    deleteTask(toBeDeleted) {
+        this.modifyTasks(tasks => {
+            if(toBeDeleted.id !== null) {
+                tasks = tasks.filter(task => task.id !== toBeDeleted.id)
+            }
+            return tasks;
+        })
     }
 
     cancelAddTask() {
@@ -98,7 +116,10 @@ class Board extends Component {
                 marginRight: -dimensions.xCorrection,
                 marginBottom: -dimensions.yCorrection
             }}>
-                <ActionContext.Provider value={{save: this.saveTask}}>
+                <ActionContext.Provider value={{
+                    save: this.saveTask,
+                    remove: this.deleteTask
+                }}>
                     <NewTaskWizard active={this.state.edit}
                         position={this.state.newPosition}
                         cancel={this.cancelAddTask}
