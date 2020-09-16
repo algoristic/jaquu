@@ -41,7 +41,7 @@ class TaskDialogue extends Component {
                     </Container>
                 </Dialogue.Main>
                 <Dialogue.Footer className='text-right'>
-                    { buttons }
+                    { buttons.filter(button => button.visible(task)).map(button => button.component) }
                 </Dialogue.Footer>
             </Dialogue>
         )

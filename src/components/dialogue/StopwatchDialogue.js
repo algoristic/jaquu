@@ -22,8 +22,14 @@ class StopwatchDialogue extends Component {
         return (
             <TaskDialogue {...this.props}
                 buttons={[
-                    <Button onClick={() => save(task)} icon='check' text='Speichern' />,
-                    <Button key='save-and-start' onClick={this.saveAndStart} icon='play' text='Speichern und los!' />
+                    {
+                        visible: () => true,
+                        component: <Button onClick={() => save(task)} icon='check' text='Speichern' />
+                    },
+                    {
+                        visible: task => task.stopwatch.stopped,
+                        component: <Button key='save-and-start' onClick={this.saveAndStart} icon='play' text='Speichern und los!' />
+                    }
                 ]}>
             </TaskDialogue>
         )
