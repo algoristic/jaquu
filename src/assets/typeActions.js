@@ -2,6 +2,7 @@ import { getDifferenceToNow } from '../util/timeUtils'
 
 export default {
     editTask: {
+        id: 'edit-task',
         icon: 'pencil-alt',
         title: 'Bearbeiten',
         visible: () => true,
@@ -9,6 +10,7 @@ export default {
         fn: (task, { edit }) => edit(task)
     },
     deleteTask: {
+        id: 'delete-task',
         icon: 'trash-alt',
         title: 'Löschen',
         visible: () => true,
@@ -16,6 +18,7 @@ export default {
         fn: (task, { remove }) => remove(task)
     },
     stopStopwatch: {
+        id: 'stop-stopwatch',
         icon: 'pause',
         title: 'Anhalten',
         visible: ({ stopwatch }) => !stopwatch.stopped,
@@ -30,6 +33,7 @@ export default {
         }
     },
     startStopwatch: {
+        id: 'start-stopwatch',
         icon: 'play',
         title: 'Starten',
         visible: ({ stopwatch }) => stopwatch.stopped,
@@ -41,6 +45,7 @@ export default {
         }
     },
     restartStopwatch: {
+        id: 'restart-stopwatch',
         icon: 'history',
         title: 'Neu starten',
         visible: () => true,

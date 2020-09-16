@@ -7,9 +7,7 @@ import './TaskActions.css'
 export default function({ task }) {
     return (
         <div className='task-actions'>
-            {
-                types[task.type].actions.map(action => <TaskAction action={action} task={task} />)
-            }
+            { types[task.type].actions.map(action => <TaskAction key={action.id} action={action} task={task} />) }
         </div>
     );
 }

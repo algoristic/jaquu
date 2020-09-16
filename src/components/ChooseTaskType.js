@@ -1,10 +1,9 @@
 import React from 'react'
 
-import Icon from './Icon'
 import TaskChoice from './TaskChoice'
 import './ChooseTaskType.css'
 
-export default function({callback, cancel}) {
+export default function({ callback, cancel }) {
     return (
         <div className='choose-task-type'>
             <div className='content-wrapper'>

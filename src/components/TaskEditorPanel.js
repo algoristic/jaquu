@@ -32,7 +32,7 @@ class TaskEditorPanel extends Component {
     }
 
     render() {
-        const { task, save, editProperty } = this.props;
+        const { task, editProperty } = this.props;
         return (
             <div className={'task-editor-panel' + (this.state.fade ? ' fade-out' : '')}>
                 <EditTaskDialogue task={task} save={this.save}

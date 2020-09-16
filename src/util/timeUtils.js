@@ -1,8 +1,8 @@
 function getTimeDifference(d1, d2) {
-    if(!(typeof d1 === 'Date')) {
+    if(!(typeof d1 === Date)) {
         d1 = new Date(d1);
     }
-    if(!(typeof d2 === 'Date')) {
+    if(!(typeof d2 === Date)) {
         d2 = new Date(d2);
     }
     const difference = (d1 - d2);
@@ -43,17 +43,13 @@ function displayTimeVariable(msec) {
         hhPresent = true;
     }
     const mm = Math.floor(msec / 1000 / 60);
-    let mmPresent = false;
     if((mm !== 0) || hhPresent) {
         msec -= mm * 1000 * 60;
         result += `${mm}m`;
-        mmPresent = true;
     }
     const ss = Math.floor(msec / 1000);
-    {
-        msec -= ss * 1000;
-        result += `${ss}s`;
-    }
+    msec -= ss * 1000;
+    result += `${ss}s`;
     return result;
 }
 

@@ -3,11 +3,8 @@ import React, { Component } from 'react'
 import './Dialogue.css'
 
 class Dialoue extends Component {
-    constructor(props) {
-        super(props);
-    }
 
-    static Header({children, className}) {
+    static Header({ children, className }) {
         return (
             <div className={'dialogue-header' + (className ? (' ' + className ): '')}>
                 { children }
@@ -15,7 +12,7 @@ class Dialoue extends Component {
         );
     }
 
-    static Main({children, className}) {
+    static Main({ children, className }) {
         return (
             <div className={'dialogue-main' + (className ? (' ' + className ): '')}>
                 { children }
@@ -23,7 +20,7 @@ class Dialoue extends Component {
         );
     }
 
-    static Footer({children, className}) {
+    static Footer({ children, className }) {
         return (
             <div className={'dialogue-footer' + (className ? (' ' + className ): '')}>
                 { children }
@@ -32,7 +29,7 @@ class Dialoue extends Component {
     }
 
     render() {
-        const { children, width } = this.props;
+        const { children } = this.props;
         return (
             <div className='dialogue'>
                 <div className='dialogue-body'>

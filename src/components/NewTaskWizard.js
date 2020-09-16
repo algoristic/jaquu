@@ -60,7 +60,7 @@ class NewTaskWizard extends Component {
     }
 
     render() {
-        const { active, save } = this.props;
+        const { active } = this.props;
         const { step, fade, task } = this.state;
         let elem = null;
         switch(step) {

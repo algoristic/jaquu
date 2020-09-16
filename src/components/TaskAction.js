@@ -15,5 +15,5 @@ export default function({ action, task }) {
             )
         }}
         </ActionContext.Consumer>
-    )
+    );
 }

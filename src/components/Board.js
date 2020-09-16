@@ -53,7 +53,7 @@ class Board extends Component {
         };
     }
 
-    addTask({x, y}) {
+    addTask({ x, y }) {
         this.setState({
             edit: true,
             newPosition: {

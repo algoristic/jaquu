@@ -4,7 +4,6 @@ import TimerDialogue from '../components/dialogue/TimerDialogue'
 import TrackerDialogue from '../components/dialogue/TrackerDialogue'
 import { alarmTimer, stopwatchTimer, timerTimer, trackerTimer } from '../util/typeUtils'
 import actions from './typeActions'
-import { getDifferenceToNow } from '../util/timeUtils'
 
 export default {
     alarm: {

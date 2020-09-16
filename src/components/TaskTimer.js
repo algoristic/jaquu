@@ -21,9 +21,9 @@ class TaskTimer extends Component {
     render() {
         return (
             <div className='task-timer'>
-                {this.state.time}
+                { this.state.time }
             </div>
-        )
+        );
     }
 }
 

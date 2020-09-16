@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import GridLayout from 'react-grid-layout';
 
-import TaskName from './TaskName'
 import { renderTaskWidgets } from './Task'
 import '../../node_modules/react-grid-layout/css/styles.css'
 import '../../node_modules/react-resizable/css/styles.css'
@@ -56,18 +55,9 @@ class TaskGrid extends Component {
                     rowHeight={96} margin={[0, 0]}
                     preventollision={true}
                     compactType={null}
-                    onDragStart={(_unused1, {x, y}) => {
-                        this.setState({
-                            startPosition: {
-                                x1: x,
-                                y1: y
-                            }
-                        });
-                    }}
-                    onDragStop={(_unused1, _unused2, {x, y}) => this.moveTask({x2: x, y2: y})}>
-                    {
-                        taskWidgets
-                    }
+                    onDragStop={(_unused1, _unused2, {x, y}) => this.moveTask({x2: x, y2: y})}
+                    onDragStart={(_unused1, {x, y}) => { this.setState({startPosition: { x1: x, y1: y }})}}>
+                        { taskWidgets }
                 </GridLayout>
             </div>
         );

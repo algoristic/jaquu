@@ -24,7 +24,7 @@ class StopwatchDialogue extends Component {
                 buttons={[
                     {
                         visible: () => true,
-                        component: <Button onClick={() => save(task)} icon='check' text='Speichern' />
+                        component: <Button key='save' onClick={() => save(task)} icon='check' text='Speichern' />
                     },
                     {
                         visible: task => task.stopwatch.stopped,
@@ -32,7 +32,7 @@ class StopwatchDialogue extends Component {
                     }
                 ]}>
             </TaskDialogue>
-        )
+        );
     }
 }
 

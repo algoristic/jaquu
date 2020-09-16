@@ -32,7 +32,7 @@ function timerTimer({ due }, callback) {
     })
 }
 
-function trackerTimer({}, callback) {}
+function trackerTimer(task, callback) {}
 
 export {
     alarmTimer,

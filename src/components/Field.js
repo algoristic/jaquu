@@ -27,17 +27,15 @@ function calculateProperties(index, dimensions) {
     };
 }
 
-export default function({index, boardDimensions, size, action}) {
+export default function({ index, boardDimensions, size, action }) {
     const {x, y, accessible, dark} = calculateProperties(index, boardDimensions);
     return (
         <div className={'field ' + (dark ? 'dark' : 'light') + (accessible ? ' accessible' : '')} style={{width: size, height: size}}>
-        {
-            accessible && (
-                <AddTaskAction onClick={() => action({x: x, y: y})}>
-                    <Icon name='plus' size='3x' />
-                </AddTaskAction>
-            )
-        }
+        { accessible && (
+            <AddTaskAction onClick={() => action({x: x, y: y})}>
+                <Icon name='plus' size='3x' />
+            </AddTaskAction>
+        )}
         </div>
     );
 }
