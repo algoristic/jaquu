@@ -19,7 +19,7 @@ export default {
         timerFunction: stopwatchTimer,
         editor: StopwatchDialogue,
         actions: [
-            actions.editStopwatch,
+            actions.editTask,
             actions.startStopwatch,
             actions.stopStopwatch,
             actions.restartStopwatch,
