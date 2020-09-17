@@ -6,6 +6,7 @@ import NewTaskWizard from './NewTaskWizard'
 import TaskEditorPanel from './TaskEditorPanel'
 import TaskGrid from './TaskGrid'
 import TaskService from '../service/taskService'
+import UUID from '../util/UUID'
 import VisualGrid from './VisualGrid'
 import { setPropertyValue } from '../util/objectUtils'
 
@@ -89,7 +90,7 @@ class Board extends Component {
     saveTask(toBeSaved) {
         this.modifyTasks(tasks => {
             if(toBeSaved.id === null) {
-                toBeSaved.id = tasks.length;
+                toBeSaved.id = UUID.getRandom();
                 tasks.push(toBeSaved);
             } else {
                 tasks = tasks.map(task => {
