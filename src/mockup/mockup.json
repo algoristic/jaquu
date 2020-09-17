@@ -7,7 +7,11 @@
             "y": 1
         },
         "type": "alarm",
-        "due": 1599570249433
+        "alarm": {
+            "due": 1599570249433,
+            "stopped": false,
+            "repeating": "none"
+        }
     },
     {
         "id": 2,
