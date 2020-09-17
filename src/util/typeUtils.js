@@ -24,8 +24,9 @@ function stopwatchTimer({ stopwatch }, callback) {
     });
 }
 
-function timerTimer({ due }, callback) {
+function timerTimer({ timer }, callback) {
     doCallback(callback, () => {
+        let { due, stopped, lastStop } = timer;
         due = getDifferenceToNow(due);
         due = displayRemainingTime(due);
         return due;

@@ -32,7 +32,7 @@ export default {
         typeSpecific: {
             stopped: true,
             measuredTime: 0,
-            lastStop: 0
+            lastStop: null
         }
     },
     timer: {
@@ -44,7 +44,11 @@ export default {
             actions.editTask,
             actions.deleteTask
         ],
-        typeSpecific: {}
+        typeSpecific: {
+            stopped: true,
+            due: null,
+            lastStop: null
+        }
     },
     tracker: {
         icon: 'tasks',

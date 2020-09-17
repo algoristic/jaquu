@@ -1,0 +1,10 @@
+.timer-control .buttons {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.timer-control .buttons .timer-btn:first-child {
+    margin-left: 0;
+}
+.timer-control .buttons .timer-btn:last-child {
+    margin-right: 0;
+}

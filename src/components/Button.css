@@ -16,6 +16,9 @@ dangerhelpwarningsuccess.btn[disabled] {
     transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     border-radius: 3px;
 }
+.btn.btn-small {
+    padding: 0.25rem 0.5rem;
+}
 .btn .btn-icon {
     margin-right: 0.5rem;
 }

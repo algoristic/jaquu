@@ -14,12 +14,8 @@ function getDifferenceToNow(date) {
 }
 
 function displayRemainingTime(time) {
-    if(time >= 0) {
-        return '- finished -'; //since when?
-    } else {
-        time *= -1;
-        return displayTimeVariable(time);
-    }
+    time *= -1;
+    return displayTimeVariable(time);
 }
 
 function displayRunningTime(time) {
