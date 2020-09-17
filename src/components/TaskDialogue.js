@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-grid-system';
 import { setConfiguration } from 'react-grid-system';
 
+import Button from './Button'
 import Dialogue from './Dialogue'
 import Input from './Input'
 import TaskIcon from './TaskIcon'
@@ -10,7 +11,7 @@ import './TaskDialogue.css'
 
 setConfiguration({ gutterWidth: 0 });
 
-export default function({ task, buttons, editProperty, children }) {
+export default function({ task, save, buttons, editProperty, children }) {
     const { type } = task;
     const editType = types[type];
     return (
@@ -35,7 +36,12 @@ export default function({ task, buttons, editProperty, children }) {
                 </Container>
             </Dialogue.Main>
             <Dialogue.Footer className='text-right'>
-                { buttons.filter(button => button.visible(task)).map(button => button.component) }
+                <Button key='save' onClick={() => save(task)} icon='check' severity='success' text='Speichern' />
+                <Button key='save' onClick={() => save(task)} icon='times' severity='warning' text='Abbrechen' />
+                <Button key='save' onClick={() => save(task)}
+                    icon='trash-alt' severity='danger' text='Löschen'
+                    condition={() => task.id !== null}>
+                </Button>
             </Dialogue.Footer>
         </Dialogue>
     );
