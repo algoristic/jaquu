@@ -8,7 +8,7 @@
         },
         "type": "alarm",
         "alarm": {
-            "due": 1599570249433,
+            "due": "<timestamp>",
             "stopped": false,
             "repeating": "none"
         }
