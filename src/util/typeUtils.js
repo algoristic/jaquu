@@ -1,4 +1,4 @@
-import { getDifferenceToNow, displayRemainingTime, displayRunningTime } from './timeUtils'
+import { getDifferenceToNow, getRemainingTime, displayRemainingTime, displayRunningTime } from './timeUtils'
 
 function doCallback(callback, fn) {
     callback(fn());
@@ -26,10 +26,9 @@ function stopwatchTimer({ stopwatch }, callback) {
 
 function timerTimer({ timer }, callback) {
     doCallback(callback, () => {
-        let { due, stopped, lastStop } = timer;
-        due = getDifferenceToNow(due);
-        due = displayRemainingTime(due);
-        return due;
+        let time = getRemainingTime(timer);
+        time = displayRemainingTime(time);
+        return time;
     })
 }
 

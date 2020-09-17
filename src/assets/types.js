@@ -42,12 +42,15 @@ export default {
         editor: TimerDialogue,
         actions: [
             actions.editTask,
+            actions.stopTimer,
+            actions.startTimer,
             actions.deleteTask
         ],
         typeSpecific: {
-            stopped: true,
-            due: null,
-            lastStop: null
+            runtime: 300000,
+            lastStop: null,
+            remaining: 300000,
+            stopped: true
         }
     },
     tracker: {

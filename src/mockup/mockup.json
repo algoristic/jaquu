@@ -36,9 +36,11 @@
         },
         "type": "timer",
         "timer": {
-            "due": 1599570249433,
-            "stopped": false,
-            "lastStop": null
+            "runtime": 1000,
+            "started": "<timestamp>",
+            "lastStop": "<timestamp>",
+            "remaining": 500,
+            "stopped": true
         }
     }
 ]
