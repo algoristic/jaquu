@@ -11,7 +11,7 @@ import './TaskDialogue.css'
 
 setConfiguration({ gutterWidth: 0 });
 
-export default function({ task, save, buttons, editProperty, children }) {
+export default function({ task, save, cancel, remove, buttons, editProperty, children }) {
     const { type } = task;
     const editType = types[type];
     return (
@@ -36,11 +36,11 @@ export default function({ task, save, buttons, editProperty, children }) {
                 </Container>
             </Dialogue.Main>
             <Dialogue.Footer className='text-right'>
-                <Button key='save' onClick={() => save(task)} icon='check' severity='success' text='Speichern' />
-                <Button key='save' onClick={() => save(task)} icon='times' severity='warning' text='Abbrechen' />
-                <Button key='save' onClick={() => save(task)}
-                    icon='trash-alt' severity='danger' text='Löschen'
-                    condition={() => task.id !== null}>
+                <Button onClick={() => save(task)} icon='check' severity='success' text='Speichern' />
+                <Button onClick={cancel} icon='times' severity='warning' text='Abbrechen' />
+                <Button icon='trash-alt' severity='danger' text='Löschen'
+                    condition={() => task.id !== null}
+                    onClick={() => remove(task)}>
                 </Button>
             </Dialogue.Footer>
         </Dialogue>

@@ -71,7 +71,8 @@ class NewTaskWizard extends Component {
                 break;
             case 2:
                 elem = (
-                    <EditTaskDialogue save={this.saveTask} task={task}
+                    <EditTaskDialogue task={task}
+                        save={this.saveTask} cancel={this.closeWizard}
                         editProperty={this.editTaskProperty}>
                     </EditTaskDialogue>
                 );

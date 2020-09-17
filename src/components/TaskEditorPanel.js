@@ -11,6 +11,7 @@ class TaskEditorPanel extends Component {
 
         this.fade = this.fade.bind(this);
         this.save = this.save.bind(this);
+        this.remove = this.remove.bind(this);
         this.cancel = this.cancel.bind(this);
     }
 
@@ -27,6 +28,11 @@ class TaskEditorPanel extends Component {
         this.fade(() => save(task));
     }
 
+    remove() {
+        const { remove, task } = this.props;
+        this.fade(() => remove(task));
+    }
+
     cancel() {
         this.fade(this.props.action);
     }
@@ -35,7 +41,9 @@ class TaskEditorPanel extends Component {
         const { task, editProperty } = this.props;
         return (
             <div className={'task-editor-panel' + (this.state.fade ? ' fade-out' : '')}>
-                <EditTaskDialogue task={task} save={this.save}
+                <EditTaskDialogue task={task}
+                    save={this.save} remove={this.remove}
+                    cancel={this.cancel}
                     editProperty={editProperty}>
                 </EditTaskDialogue>
                 <ClickableOverlay action={this.cancel} />

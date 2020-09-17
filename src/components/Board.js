@@ -111,6 +111,7 @@ class Board extends Component {
             if(toBeDeleted.id !== null) {
                 tasks = tasks.filter(task => task.id !== toBeDeleted.id)
             }
+            this.setState({editTask: null});
             return tasks;
         })
     }
@@ -154,7 +155,7 @@ class Board extends Component {
                     <VisualGrid fields={fields} />
                     { this.state.editTask && (
                         <TaskEditorPanel task={this.state.editTask}
-                            save={this.saveTask}
+                            save={this.saveTask} remove={this.deleteTask}
                             editProperty={this.editTaskProperty}
                             action={this.cancelEdit}>
                         </TaskEditorPanel>
