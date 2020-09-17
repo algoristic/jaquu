@@ -14,7 +14,8 @@ export default {
         actions: [
             actions.editTask,
             actions.deleteTask
-        ]
+        ],
+        typeSpecific: {}
     },
     stopwatch: {
         icon: 'hourglass-half',
@@ -27,7 +28,12 @@ export default {
             actions.stopStopwatch,
             actions.restartStopwatch,
             actions.deleteTask
-        ]
+        ],
+        typeSpecific: {
+            stopped: true,
+            measuredTime: 0,
+            lastStop: 0
+        }
     },
     timer: {
         icon: 'clock',
@@ -37,7 +43,8 @@ export default {
         actions: [
             actions.editTask,
             actions.deleteTask
-        ]
+        ],
+        typeSpecific: {}
     },
     tracker: {
         icon: 'tasks',
@@ -47,6 +54,7 @@ export default {
         actions: [
             actions.editTask,
             actions.deleteTask
-        ]
+        ],
+        typeSpecific: {}
     }
 };

@@ -28,22 +28,7 @@ function createNewTask({ type, position }) {
         position: position,
         type: type
     };
-    task = decorate(task);
-    return task;
-}
-
-function decorate(task) {
-    switch(task.type) {
-        case 'stopwatch':
-            task.stopwatch = {
-                stopped: true,
-                measuredTime: 0,
-                lastStop: 0
-            }
-            break;
-        default:
-            break;
-    }
+    task[type] = types[type].typeSpecific;
     return task;
 }
 
