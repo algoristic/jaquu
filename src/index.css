@@ -8,3 +8,24 @@ body {
     font-size: 13px;
     font-weight: 500;
 }
+.primary {
+    background: var(--primary);
+}
+.secondary {
+    background: var(--secondary);
+}
+.success {
+    background: var(--success);
+}
+.info {
+    background: var(--info);
+}
+.warning {
+    background: var(--warning);
+}
+.help {
+    background: var(--help);
+}
+.danger {
+    background: var(--danger);
+}
