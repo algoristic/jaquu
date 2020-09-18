@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
-import Button from '../Button'
 import TaskDialogue from '../TaskDialogue'
 import TimerControl from '../TimerControl'
 import TimerFunctionContext from '../../context/TimerFunctionContext'
-import { getRemainingTime, now } from '../../util/timeUtils'
+import { now } from '../../util/timeUtils'
 
 class TimerDialogue extends Component {
     constructor(props) {
@@ -21,10 +20,6 @@ class TimerDialogue extends Component {
         if(res < 0) {
             res = 0;
         }
-
-        const { task } = this.props;
-        const { id } = task;
-
         this.props.editProperty('timer', {
             runtime: res,
             lastStop: now(),

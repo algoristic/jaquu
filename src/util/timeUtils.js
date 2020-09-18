@@ -26,7 +26,7 @@ function getRemainingTime({ lastStop, stopped, remaining }) {
 
 function flattenMilliseconds(time) {
     time /= 1000;
-    time = (new Number(time)).toFixed(0);
+    time = time.toFixed(0);
     time *= 1000;
     return time;
 }

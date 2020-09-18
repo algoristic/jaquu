@@ -1,4 +1,4 @@
-import { getDifferenceToNow } from '../util/timeUtils'
+import { getDifferenceToNow, now } from '../util/timeUtils'
 
 export default {
     stopStopwatch: {
@@ -24,7 +24,7 @@ export default {
         disabled: (task) => true,
         fn: (task, { save }) => {
             task.stopwatch.stopped = false;
-            task.stopwatch.lastStop = new Date().getTime();
+            task.stopwatch.lastStop = now();
             save(task);
         }
     },
@@ -35,7 +35,7 @@ export default {
         visible: () => true,
         disabled: () => false,
         fn: (task, { save }) => {
-            task.stopwatch.lastStop = new Date().getTime();
+            task.stopwatch.lastStop = now();
             task.stopwatch.measuredTime = 0;
             save(task);
         }

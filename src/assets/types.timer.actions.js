@@ -8,7 +8,7 @@ export default {
         visible: ({ timer }) => !timer.stopped,
         disabled: (task) => false,
         fn: (task, { save }) => {
-            let { runtime, lastStop, remaining, stopped } = task.timer;
+            let { runtime, lastStop, remaining } = task.timer;
             let currentTime = now();
             remaining -= getTimeDifference(currentTime, lastStop);
             task.timer = {
