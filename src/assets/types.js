@@ -26,7 +26,7 @@ export default {
             actions.editTask,
             actions.startStopwatch,
             actions.stopStopwatch,
-            actions.restartStopwatch,
+            actions.resetStopwatch,
             actions.deleteTask
         ],
         typeSpecific: {
@@ -44,6 +44,7 @@ export default {
             actions.editTask,
             actions.stopTimer,
             actions.startTimer,
+            actions.resetTimer,
             actions.deleteTask
         ],
         typeSpecific: {

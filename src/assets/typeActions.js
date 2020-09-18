@@ -44,10 +44,10 @@ export default {
             save(task);
         }
     },
-    restartStopwatch: {
-        id: 'restart-stopwatch',
+    resetStopwatch: {
+        id: 'reset-stopwatch',
         icon: 'history',
-        title: 'Neu starten',
+        title: 'Zurücksetzen',
         visible: () => true,
         disabled: () => false,
         fn: (task, { save }) => {
@@ -84,6 +84,23 @@ export default {
         fn: (task, { save }) => {
             task.timer.stopped = false;
             task.timer.lastStop = now();
+            save(task);
+        }
+    },
+    resetTimer: {
+        id: 'reset-timer',
+        icon: 'history',
+        title: 'Zurücksetzen',
+        visible: () => true,
+        disabled: () => false,
+        fn: (task, { save }) => {
+            const { runtime, stopped } = task.timer;
+            task.timer = {
+                runtime: runtime,
+                stopped: stopped,
+                lastStop: now(),
+                remaining: runtime
+            }
             save(task);
         }
     }
