@@ -1,6 +1,9 @@
 body {
     margin: 0;
     overflow: hidden;
+    --dark: rgba(0, 0, 0, 0.75); /*#343a40*/
+    --light: #fff;
+
     --primary: #2196F3;
     --primary-dark: #0d89ec;
     --primary-light: #a6d5fa;

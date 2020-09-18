@@ -1,0 +1,28 @@
+.timepicker {
+    --transparent: rgba(255, 255, 255, 0);
+    /* main wrapper */
+    --main-font-family: 'Quicksand', sans-serif;
+    --main-box-shadow: none;
+    --main-bg: var(--transparent);
+
+    /* top bar */
+    --top-bg: var(--transparent);
+    --top-colon-color: var(--dark);
+    --top-text-color: var(--dark);
+    --top-selected-color: var(--primary);
+
+    /* clock wrapper */
+    --clock-wrapper-bg: var(--transparent);
+    --clock-bg: var(--transparent);
+
+    /* clock hand */
+    --hand-line-color: var(--primary-light);
+    --hand-circle-center: var(--primary-light);
+    --hand-circle-outer: var(--primary-light);
+
+    /* numbers */
+    --numbers-text-color: var(--secondary);
+}
+.react-timekeeper {
+    width: 100% !important;
+}

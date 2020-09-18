@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 
-import Button from '../Button'
+import AlarmControl from '../AlarmControl'
 import TaskDialogue from '../TaskDialogue'
 
 class AlarmDialogue extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
-            <TaskDialogue {...this.props} />
+            <TaskDialogue {...this.props}>
+                <AlarmControl />
+            </TaskDialogue>
         );
     }
 }

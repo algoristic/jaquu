@@ -1,11 +1,11 @@
-//import alarm from './types.alarm'
+import alarm from './types.alarm'
 import timer from './types.timer'
 //import tracker from './types.tracker'
 import stopwatch from './types.stopwatch'
 
 export default {
+    stopwatch: stopwatch,
     timer: timer,
-    stopwatch: stopwatch//,
-//    alarm: alarm,
+    alarm: alarm//,
 //    tracker: tracker
 };
