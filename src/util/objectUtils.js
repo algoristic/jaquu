@@ -5,4 +5,4 @@ function setPropertyValue(obj, property, value) {
 
 export {
     setPropertyValue
-}
+};

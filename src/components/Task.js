@@ -54,4 +54,4 @@ export {
     renderTaskWidget,
     renderTaskWidgets,
     createNewTask
-}
+};

@@ -12,4 +12,4 @@ export default function({ onClick, children }) {
             </div>
         </div>
     );
-}
+};

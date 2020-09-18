@@ -13,4 +13,4 @@ export default function({ type, callback }) {
             <div className='type-wrapper'>{ type.name }</div>
         </div>
     );
-}
+};

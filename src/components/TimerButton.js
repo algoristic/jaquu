@@ -14,4 +14,4 @@ export default function({ text, amount }) {
         }}
         </TimerFunctionContext.Consumer>
     );
-}
+};

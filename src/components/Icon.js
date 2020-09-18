@@ -5,4 +5,4 @@ export default function({ name, size }) {
     return (
         <FontAwesomeIcon icon={name} className={size ? ('fa-' + size) : ''} />
     );
-}
+};

@@ -12,4 +12,4 @@ export default function({ type, size }) {
             </span>
         </div>
     );
-}
+};

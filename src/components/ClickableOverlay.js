@@ -6,4 +6,4 @@ export default function({ action }) {
     return (
         <div className='clickable-overlay' onClick={action} />
     );
-}
+};

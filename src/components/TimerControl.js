@@ -22,4 +22,4 @@ export default function({ time }) {
             <TimerOutput time={time} />
         </div>
     );
-}
+};

@@ -38,4 +38,4 @@ export default function({ index, boardDimensions, size, action }) {
         )}
         </div>
     );
-}
+};

@@ -9,4 +9,4 @@ export default function({ time }) {
     return (
         <Input value={'Zeit: ' + display} responsive={false} disabled={true} />
     );
-}
+};

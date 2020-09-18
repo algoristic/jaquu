@@ -7,4 +7,4 @@ export default function(props) {
     const { type } = task;
     const taskType = types[type];
     return React.createElement(taskType.editor, props);
-}
+};
