@@ -29,10 +29,10 @@ class Dialoue extends Component {
     }
 
     render() {
-        const { children } = this.props;
+        const { children, style } = this.props;
         return (
             <div className='dialogue'>
-                <div className='dialogue-body'>
+                <div className='dialogue-body' style={style}>
                     { children }
                 </div>
             </div>

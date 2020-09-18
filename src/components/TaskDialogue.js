@@ -15,7 +15,7 @@ export default function({ task, save, cancel, remove, buttons, editProperty, chi
     const { type } = task;
     const editType = types[type];
     return (
-        <Dialogue>
+        <Dialogue style={{maxWidth: 480}}>
             <Dialogue.Header>
                 <h2>
                     {editType.name}
