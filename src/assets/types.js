@@ -5,7 +5,7 @@ import stopwatch from './types.stopwatch'
 
 export default {
     timer: timer,
-    stopwatch: stopwatch,
+    stopwatch: stopwatch/*,
     alarm: alarm,
-    tracker: tracker
+    tracker: tracker*/
 };

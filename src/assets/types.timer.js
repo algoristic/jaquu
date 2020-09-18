@@ -4,6 +4,7 @@ import timerActions from './types.timer.actions'
 import { timerTimer } from '../util/typeUtils'
 
 export default {
+    id: 'timer',
     icon: 'clock',
     name: 'Zeitgeber',
     timerFunction: timerTimer,

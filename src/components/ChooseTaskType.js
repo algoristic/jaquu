@@ -1,16 +1,15 @@
 import React from 'react'
 
 import TaskChoice from './TaskChoice'
+import types from '../assets/types'
 import './ChooseTaskType.css'
 
-export default function({ callback, cancel }) {
+export default function({ callback }) {
+    const choices = Object.values(types).map(type => <TaskChoice key={type.id} type={type} callback={callback} />)
     return (
         <div className='choose-task-type'>
             <div className='content-wrapper'>
-                <TaskChoice type='alarm' callback={callback} />
-                <TaskChoice type='stopwatch' callback={callback} />
-                <TaskChoice type='timer' callback={callback} />
-                <TaskChoice type='tracker' callback={callback} />
+                { choices }
             </div>
         </div>
     );

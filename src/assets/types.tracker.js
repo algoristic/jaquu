@@ -3,6 +3,7 @@ import actions from './types.task.actions'
 import { trackerTimer } from '../util/typeUtils'
 
 export default {
+    id: 'tracker',
     icon: 'tasks',
     name: 'Zeiterfassung',
     timerFunction: trackerTimer,

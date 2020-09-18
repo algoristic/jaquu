@@ -4,12 +4,10 @@ function doCallback(callback, fn) {
     callback(fn());
 }
 
-function alarmTimer({ due }, callback) {
+function alarmTimer({ alarm }, callback) {
     doCallback(callback, () => {
-        due = getDifferenceToNow(due);
-        due = displayRemainingTime(due);
-        return due;
-    })
+        return '-';
+    });
 }
 
 function stopwatchTimer({ stopwatch }, callback) {
@@ -29,14 +27,18 @@ function timerTimer({ timer }, callback) {
         let time = getRemainingTime(timer);
         time = displayRemainingTime(time);
         return time;
-    })
+    });
 }
 
-function trackerTimer(task, callback) {}
+function trackerTimer({ tracker }, callback) {
+    doCallback(callback, () => {
+        return '-';
+    });
+}
 
 export {
     alarmTimer,
     stopwatchTimer,
     timerTimer,
     trackerTimer
-}
+};

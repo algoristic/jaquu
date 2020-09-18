@@ -4,6 +4,7 @@ import stopwatchActions from './types.stopwatch.actions'
 import { stopwatchTimer } from '../util/typeUtils'
 
 export default {
+    id: 'stopwatch',
     icon: 'hourglass-half',
     name: 'Stoppuhr',
     timerFunction: stopwatchTimer,
