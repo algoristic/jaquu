@@ -11,13 +11,16 @@ class TaskTimer extends Component {
         const { type } = task;
         const taskType = types[type];
         setInterval(() => {
-            taskType.timerFunction(task, (res) => {
-                this.setState({
-                    time: res
-                });
+            taskType.timerFunction(this.props.task, (res) => {
+                if(this.state.time !== res) {
+                    this.setState({
+                        time: res
+                    });
+                }
             });
         }, 1000);
     }
+
     render() {
         return (
             <div className='task-timer'>

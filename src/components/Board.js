@@ -87,6 +87,11 @@ class Board extends Component {
         this.setState({editTask: editTask});
     }
 
+    //TODO: auf irgendeine Weise werden beim (Editieren eines bestehenden) Timer
+    //      alle Werte korrekt gespeichert (siehe `localStorage`). Der angezeigte
+    //      `remainingTime`-Wert ändert sich allerdings erst nach neu Laden der
+    //      Seite - wie kann das sein? Werden nicht alle Properties des Objektes
+    //      übertragen?
     saveTask(toBeSaved) {
         this.modifyTasks(tasks => {
             if(toBeSaved.id === null) {
