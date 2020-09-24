@@ -1,0 +1,9 @@
+.control-wrapper {
+    position: fixed;
+    width: 96px;
+    height: 96px;
+}
+.control {
+    /*background: var(--light);*/
+    /*width: 50%;*/
+}

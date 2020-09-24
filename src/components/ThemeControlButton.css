@@ -1,0 +1,17 @@
+.theme-control-button {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 4px;
+    opacity: 0.25;
+}
+.theme-control-button.enabled {
+    opacity: 1;
+}
+.theme-control-button.enabled:hover {
+    cursor: pointer;
+    
+}

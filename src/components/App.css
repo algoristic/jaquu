@@ -1,34 +1,4 @@
 body {
     margin: 0;
     overflow: hidden;
-    --dark: rgba(0, 0, 0, 0.75); /*#343a40*/
-    --light: #fff;
-
-    --primary: #2196F3;
-    --primary-dark: #0d89ec;
-    --primary-light: #a6d5fa;
-
-    --secondary: #607D8B;
-    --secondary-dark: #56717d;
-    --secondary-light: #beccd2;
-
-    --success: #689F38;
-    --success-dark: #5e8f32;
-    --success-light: #c2e0a8;
-
-    --info: #0288D1;
-    --info-dark: #027abc;
-    --info-light: #89d4fe;
-
-    --warning: #FBC02D;
-    --warning-dark: #fab710;
-    --warning-light: #fde6ab;
-
-    --help: #9C27B0;
-    --help-dark: #8c239e;
-    --help-light: #df9eea;
-
-    --danger: #D32F2F;
-    --danger-dark: #c02929;
-    --danger-light: #edacac;
 }
