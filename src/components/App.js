@@ -33,7 +33,7 @@ class App extends Component {
                         return (this.state.theme ? this.state.theme.id === theme.id : false);
                     }
                 }}>
-                    <Control />
+                    {/*<Control />*/}
                     <Board />
                 </ThemeContext.Provider>
             </div>
