@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Quicksand', sans-serif;
-    color: var(--dark);
+    color: var(--main-color);
     font-size: 13px;
     font-weight: 500;
 }

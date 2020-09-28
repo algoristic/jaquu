@@ -35,9 +35,12 @@
     --visual-grid-bg: #f2f2f2;
     --field-light-bg: #f2f2f2;
     --field-dark-bg: #e5e5e5;
+    --main-color: #404040;
     --task-bg: var(--light);
     --task-box-shadow: -2px -2px 2px 0px rgba(0,0,0,0.25) inset;
     --task-action-box-shadow: -2px -2px 2px 0px rgba(0,0,0,0.25) inset;
+    --task-action-bg: #fff;
+    --task-action-hover-bg: #f5f5f5;
     --task-action-hover-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25) inset;
     --floating-grid-item-bg: rgba(0, 0, 0, 0);
     --floating-grid-item-box-shadow: 0px 0px 0px 5px var(--primary);
@@ -49,13 +52,16 @@
     --light: #fff;
 
     --dialogue-bg: var(--light);
-    --visual-grid-bg: rgba(44, 40, 40, 0.05);
-    --field-light-bg: rgba(255, 255, 255, 0);
-    --field-dark-bg: rgba(0, 0, 0, 0.05);
-    --task-bg: var(--light);
+    --visual-grid-bg: #464646;
+    --field-light-bg: #464646;
+    --field-dark-bg:#262626;
+    --main-color: #404040;
+    --task-bg: #666;
     --task-box-shadow: -2px -2px 2px 0px rgba(0,0,0,0.25) inset;
     --task-action-box-shadow: -2px -2px 2px 0px rgba(0,0,0,0.25) inset;
     --task-action-hover-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25) inset;
+    --task-action-bg: #fff;
+    --task-action-hover-bg: #f5f5f5;
     --floating-grid-item-bg: rgba(0, 0, 0, 0);
     --floating-grid-item-box-shadow: 0px 0px 0px 5px var(--primary);
     --task-name-bg: rgba(0,0,0,0.1);

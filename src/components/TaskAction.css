@@ -1,5 +1,5 @@
 .task-action {
-    background: white;
+    background: var(--task-action-bg);
     box-shadow: var(--task-action-box-shadow);
     width: 24px;
     height: 24px;
@@ -14,7 +14,7 @@
 }
 .task-action:hover {
     cursor: pointer;
-    background: #f5f5f5;
+    background: var(--task-action-hover-bg);
     box-shadow: var(--task-action-hover-box-shadow);
     color: var(--secondary-dark);
 }
