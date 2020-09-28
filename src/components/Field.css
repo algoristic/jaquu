@@ -8,8 +8,8 @@
     cursor: pointer;
 }
 .field.light {
-    background: rgba(255, 255, 255, 0);
+    background: var(--field-light-bg);
 }
 .field.dark {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--field-dark-bg);
 }

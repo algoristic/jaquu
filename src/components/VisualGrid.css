@@ -1,5 +1,5 @@
 .visual-grid {
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--visual-grid-bg);
     display: flex;
     flex-wrap: wrap;
 }

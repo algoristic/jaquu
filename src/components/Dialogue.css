@@ -20,7 +20,7 @@
 .dialogue .dialogue-header,
 .dialogue .dialogue-main,
 .dialogue .dialogue-footer {
-    background: #fff;
+    background: var(--dialogue-bg);
 }
 .dialogue .dialogue-header {
     padding: 1.5rem;

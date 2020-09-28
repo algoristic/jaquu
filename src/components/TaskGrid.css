@@ -13,7 +13,7 @@
 }
 .react-grid-item.react-grid-placeholder {
     border-radius: 4px;
-    background: rgba(0, 0, 0, 0);
+    background: var(--floating-grid-item-bg);
     opacity: 0.5;
-    box-shadow: 0px 0px 0px 5px #2196F3;
+    box-shadow: var(--floating-grid-item-box-shadow);
 }

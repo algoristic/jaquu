@@ -7,7 +7,7 @@
     box-shadow: var(--material-shadow-wide);
     width: 96px;
     height: 96px;
-    background: white;
+    background: var(--light);
     color: var(--secondary);
     transition: transform 100ms ease-in-out;
     z-index: 100;
@@ -22,7 +22,7 @@
     font-weight: 700;
 }
 .choice-wrapper .type-wrapper {
-    color: white;
+    color: var(--light);
     position: absolute;
     margin-bottom: 128px;
 }
