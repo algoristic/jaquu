@@ -6,7 +6,7 @@ import { timerTimer } from '../util/typeUtils'
 export default {
     id: 'timer',
     icon: 'clock',
-    name: 'Zeitgeber',
+    name: 'Timer',
     timerFunction: timerTimer,
     editor: TimerDialogue,
     actions: [
