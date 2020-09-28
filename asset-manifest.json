@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jaquu/static/css/main.b9788ef4.chunk.css",
+    "main.js": "/jaquu/static/js/main.f96fcca9.chunk.js",
+    "main.js.map": "/jaquu/static/js/main.f96fcca9.chunk.js.map",
+    "runtime-main.js": "/jaquu/static/js/runtime-main.60c7d6a7.js",
+    "runtime-main.js.map": "/jaquu/static/js/runtime-main.60c7d6a7.js.map",
+    "static/css/2.f290e260.chunk.css": "/jaquu/static/css/2.f290e260.chunk.css",
+    "static/js/2.a8149a1d.chunk.js": "/jaquu/static/js/2.a8149a1d.chunk.js",
+    "static/js/2.a8149a1d.chunk.js.map": "/jaquu/static/js/2.a8149a1d.chunk.js.map",
+    "index.html": "/jaquu/index.html",
+    "precache-manifest.51d3e8b7cc04fe1373e04c35927fc0db.js": "/jaquu/precache-manifest.51d3e8b7cc04fe1373e04c35927fc0db.js",
+    "service-worker.js": "/jaquu/service-worker.js",
+    "static/css/2.f290e260.chunk.css.map": "/jaquu/static/css/2.f290e260.chunk.css.map",
+    "static/css/main.b9788ef4.chunk.css.map": "/jaquu/static/css/main.b9788ef4.chunk.css.map",
+    "static/js/2.a8149a1d.chunk.js.LICENSE.txt": "/jaquu/static/js/2.a8149a1d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.60c7d6a7.js",
+    "static/css/2.f290e260.chunk.css",
+    "static/js/2.a8149a1d.chunk.js",
+    "static/css/main.b9788ef4.chunk.css",
+    "static/js/main.f96fcca9.chunk.js"
+  ]
+}
