@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Board from './Board'
-import Control from './Control'
+//import Control from './Control'
 import ThemeContext from '../context/ThemeContext'
 import ThemeService from '../service/themeService'
 
