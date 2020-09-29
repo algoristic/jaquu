@@ -1,7 +1,7 @@
 {
   "name": "jaquu",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "homepage": "https://algoristic.github.io/jaquu",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
