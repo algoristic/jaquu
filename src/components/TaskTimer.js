@@ -11,11 +11,18 @@ class TaskTimer extends Component {
         const { type } = task;
         const taskType = types[type];
         setInterval(() => {
-            taskType.timerFunction(this.props.task, (res) => {
-                if(this.state.time !== res) {
+            taskType.timerFunction(this.props.task, ({ time, notification }) => {
+                if(this.state.time !== time) {
                     this.setState({
-                        time: res
+                        time: time
                     });
+                    if(notification) {
+                        Notification.requestPermission().then(permission => {
+                            if(permission === 'granted') {
+                                new Notification(this.props.task.name);
+                            }
+                        });
+                    }
                 }
             });
         }, 1000);

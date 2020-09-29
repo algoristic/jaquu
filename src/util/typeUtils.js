@@ -6,7 +6,7 @@ function doCallback(callback, fn) {
 
 function alarmTimer({ alarm }, callback) {
     doCallback(callback, () => {
-        return '-';
+        return { time: '-' };
     });
 }
 
@@ -18,21 +18,28 @@ function stopwatchTimer({ stopwatch }, callback) {
             time += getDifferenceToNow(lastStop);
         }
         time = displayRunningTime(time);
-        return time;
+        return { time: time };
     });
 }
 
 function timerTimer({ timer }, callback) {
     doCallback(callback, () => {
         let time = getRemainingTime(timer);
+        let notification = false;
+        if(time === 0) {
+            notification = true;
+        }
         time = displayRemainingTime(time);
-        return time;
+        return {
+            time: time,
+            notification: notification
+        };
     });
 }
 
 function trackerTimer({ tracker }, callback) {
     doCallback(callback, () => {
-        return '-';
+        return { time: '-' };
     });
 }
 
