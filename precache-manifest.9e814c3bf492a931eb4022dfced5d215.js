@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c3456cf24b40683b8825eae71a2e22c7",
+    "revision": "2a6d45fba1782c39756d7b742eda2bd7",
     "url": "/jaquu/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jaquu/static/css/2.f290e260.chunk.css"
   },
   {
-    "revision": "f0cc19b114aa1385d3d4",
+    "revision": "38b381f0fb096527d143",
     "url": "/jaquu/static/css/main.45b160bd.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jaquu/static/js/2.c4b3088e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f0cc19b114aa1385d3d4",
-    "url": "/jaquu/static/js/main.d20f1328.chunk.js"
+    "revision": "38b381f0fb096527d143",
+    "url": "/jaquu/static/js/main.89f51df9.chunk.js"
   },
   {
     "revision": "6cae08b19e62a6b9ca6a",

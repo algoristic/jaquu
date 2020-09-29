@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/jaquu/static/css/main.45b160bd.chunk.css",
-    "main.js": "/jaquu/static/js/main.d20f1328.chunk.js",
-    "main.js.map": "/jaquu/static/js/main.d20f1328.chunk.js.map",
+    "main.js": "/jaquu/static/js/main.89f51df9.chunk.js",
+    "main.js.map": "/jaquu/static/js/main.89f51df9.chunk.js.map",
     "runtime-main.js": "/jaquu/static/js/runtime-main.60c7d6a7.js",
     "runtime-main.js.map": "/jaquu/static/js/runtime-main.60c7d6a7.js.map",
     "static/css/2.f290e260.chunk.css": "/jaquu/static/css/2.f290e260.chunk.css",
     "static/js/2.c4b3088e.chunk.js": "/jaquu/static/js/2.c4b3088e.chunk.js",
     "static/js/2.c4b3088e.chunk.js.map": "/jaquu/static/js/2.c4b3088e.chunk.js.map",
     "index.html": "/jaquu/index.html",
-    "precache-manifest.2ca8ceb3afc4c707b6c6748aed1a5091.js": "/jaquu/precache-manifest.2ca8ceb3afc4c707b6c6748aed1a5091.js",
+    "precache-manifest.9e814c3bf492a931eb4022dfced5d215.js": "/jaquu/precache-manifest.9e814c3bf492a931eb4022dfced5d215.js",
     "service-worker.js": "/jaquu/service-worker.js",
     "static/css/2.f290e260.chunk.css.map": "/jaquu/static/css/2.f290e260.chunk.css.map",
     "static/css/main.45b160bd.chunk.css.map": "/jaquu/static/css/main.45b160bd.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.f290e260.chunk.css",
     "static/js/2.c4b3088e.chunk.js",
     "static/css/main.45b160bd.chunk.css",
-    "static/js/main.d20f1328.chunk.js"
+    "static/js/main.89f51df9.chunk.js"
   ]
 }
