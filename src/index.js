@@ -13,6 +13,5 @@ WebFont.load({
         families: ['Quicksand:500,700', 'sans-serif']
     }
 });
-Notification.requestPermission();
 document.title = 'Jaquu - Algoristic Timer';
 ReactDOM.render(<App/>, document.querySelector('#root'));

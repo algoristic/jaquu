@@ -55,6 +55,9 @@ class Board extends Component {
     }
 
     addTask({ x, y }) {
+        if(Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
         this.setState({
             edit: true,
             newPosition: {
